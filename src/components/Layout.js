@@ -131,7 +131,7 @@ export default function Layout({ children }) {
               className="hidden md:flex items-center gap-2 hover:opacity-70 transition-opacity"
             >
               <Image
-                src="/call-logo.png"
+                src="/call-logo.svg"
                 alt="Call"
                 width={32}
                 height={32}
