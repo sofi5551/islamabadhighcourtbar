@@ -965,7 +965,7 @@ export default function Home() {
               <FadeIn key={index} delay={index * 80}>
                 <div
                   className="bg-white flex flex-col items-center justify-center gap-3 py-8 px-4 transition-all duration-300 hover:scale-105"
-                  style={{ borderRadius: "11px" }}
+                  style={{ borderRadius: "11px", height: "148.84px" }}
                 >
                   {/* Icon */}
                   <div className="relative flex items-center justify-center w-10 h-10">
