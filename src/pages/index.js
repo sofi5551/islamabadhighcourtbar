@@ -1,6 +1,82 @@
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+
+function FadeIn({ children, delay = 0, className = "" }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.style.animationDelay = `${delay}ms`;
+          el.classList.add("visible");
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [delay]);
+  return (
+    <div ref={ref} className={`fade-in-up ${className}`}>
+      {children}
+    </div>
+  );
+}
+
+function SlideUp({ children, delay = 0, className = "" }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.style.animationDelay = `${delay}ms`;
+          el.classList.add("visible");
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [delay]);
+  return (
+    <div ref={ref} className={`slide-from-bottom ${className}`}>
+      {children}
+    </div>
+  );
+}
+
+function SpinIn({ children, delay = 0, className = "" }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.style.animationDelay = `${delay}ms`;
+          el.classList.add("visible");
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [delay]);
+  return (
+    <div ref={ref} className={`spin-slide-in ${className}`}>
+      {children}
+    </div>
+  );
+}
+
 const FULL_WORD = "Association";
 const bearers = [
   {
@@ -86,8 +162,17 @@ const lastRow = [
 ];
 
 function Card({ num, label, smLast, lgLast, hasBottom }) {
+  const [hovered, setHovered] = useState(false);
   return (
-    <div className="flex flex-col items-center justify-center gap-4 py-10 px-4 relative">
+    <div
+      className="flex flex-col items-center justify-center gap-4 py-10 px-4 relative cursor-pointer transition-all duration-200"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        backgroundColor: hovered ? "#f0f5f2" : "transparent",
+        borderRadius: "8px",
+      }}
+    >
       {/* Right border — hidden on sm last-in-row AND lg last-in-row */}
       {/* We draw it as an absolute element so we can toggle per breakpoint */}
       {!lgLast && (
@@ -132,6 +217,7 @@ function Card({ num, label, smLast, lgLast, hasBottom }) {
           lineHeight: "95%",
           letterSpacing: "-0.04em",
           color: "#000000",
+          WebkitTextStroke: hovered ? "0.4px #000000" : "0px",
         }}
       >
         {label}
@@ -206,7 +292,7 @@ export default function Home() {
       setVisibleCount(count);
       if (trackRef.current) {
         const containerWidth = trackRef.current.offsetWidth;
-        const width = (containerWidth - GAP * (count - 1)) / count;
+        const width = (containerWidth - GAP * (count - 1)) / (count + 0.1);
         setCardWidth(width);
       }
       setStartIndex((prev) =>
@@ -360,7 +446,7 @@ export default function Home() {
                 {/* CTA Buttons */}
                 <div className="flex flex-wrap  self-end gap-3 mt-2 md:mt-0">
                   <button
-                    className="dmsans flex items-center gap-2 px-5 py-3 rounded-full border border-white text-white transition-all duration-200 hover:bg-white hover:text-green-900"
+                    className="dmsans flex items-center gap-2 px-5 py-3 rounded-full border border-white text-white cursor-pointer transition-all duration-200 hover:bg-white hover:text-green-900 hover:border-green-900 hover:scale-105 group"
                     style={{
                       fontSize: "14px",
                       backdropFilter: "blur(6px)",
@@ -372,13 +458,14 @@ export default function Home() {
                       alt="Lawyer"
                       width={20}
                       height={20}
-                      className="object-contain"
+                      className="object-contain transition-all duration-200 group-hover:[filter:invert(21%)_sepia(57%)_saturate(628%)_hue-rotate(103deg)_brightness(92%)_contrast(103%)]"
+                      style={{ filter: "brightness(0) invert(1)" }}
                     />
                     Lawyer Search
                   </button>
 
                   <button
-                    className="dmsans flex items-center gap-2 px-5 py-3 rounded-full border border-white text-white transition-all duration-200 hover:bg-white hover:text-green-900"
+                    className="dmsans flex items-center gap-2 px-5 py-3 rounded-full border border-white text-white cursor-pointer transition-all duration-200 hover:bg-white hover:text-green-900 hover:border-green-900 hover:scale-105 group"
                     style={{
                       fontSize: "14px",
                       backdropFilter: "blur(6px)",
@@ -390,7 +477,8 @@ export default function Home() {
                       alt="Case"
                       width={20}
                       height={20}
-                      className="object-contain"
+                      className="object-contain transition-all duration-200 group-hover:[filter:invert(21%)_sepia(57%)_saturate(628%)_hue-rotate(103deg)_brightness(92%)_contrast(103%)]"
+                      style={{ filter: "brightness(0) invert(1)" }}
                     />
                     Case Management
                   </button>
@@ -422,6 +510,7 @@ export default function Home() {
       </section>
       <section className="w-full bg-white px-6 md:px-16 py-16 md:py-24 flex flex-col gap-20">
         {/* ── PRESIDENT ROW ── */}
+        <FadeIn delay={0}>
         <div className="flex flex-col lg:flex-row items-stretch gap-10 lg:gap-16">
           {/* Image */}
           <div className="relative w-full lg:flex-1 rounded-lg overflow-hidden">
@@ -522,8 +611,10 @@ export default function Home() {
             </div>
           </div>
         </div>
+        </FadeIn>
 
         {/* ── SECRETARY ROW ── */}
+        <FadeIn delay={200}>
         <div className="flex flex-col lg:flex-row-reverse items-stretch gap-10 lg:gap-16">
           {/* Image */}
           <div className="relative w-full lg:flex-1 rounded-lg overflow-hidden">
@@ -622,6 +713,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        </FadeIn>
       </section>
       <section
         className="w-full rounded-3xl overflow-hidden relative"
@@ -630,7 +722,7 @@ export default function Home() {
         {/* Content + Image side by side */}
         <div className="flex flex-col lg:flex-row items-stretch">
           {/* Left: Text Content */}
-          <div className="flex flex-col justify-center gap-6 px-8 md:px-14 py-14 lg:py-16 w-full lg:w-1/2">
+          <FadeIn delay={0} className="flex flex-col justify-center gap-6 px-8 md:px-14 py-14 lg:py-16 w-full lg:w-1/2">
             <h2
               className="basker text-white"
               style={{
@@ -676,10 +768,10 @@ export default function Home() {
               to the development of Pakistan&apos;s judicial system and the
               protection of fundamental rights.
             </p>
-          </div>
+          </FadeIn>
 
           {/* Right: Image */}
-          <div className="relative w-full lg:w-1/2 min-h-[300px] lg:min-h-0">
+          <FadeIn delay={200} className="relative w-full lg:w-1/2 min-h-[300px] lg:min-h-0">
             <Image
               src="/home4.png"
               alt="About The Bar"
@@ -687,27 +779,29 @@ export default function Home() {
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-          </div>
+          </FadeIn>
         </div>
       </section>
       <section className="w-full bg-white flex flex-col">
         {/* ── TOP BLOCK: Heading + two paras + background image ── */}
         <div className="relative w-full" style={{ minHeight: "600px" }}>
           {/* Background image */}
-          <Image
-            src="/home5.png"
-            alt="Court Building"
-            fill
-            className="object-contain object-bottom md:mt-40 mt-20"
-            style={{ mixBlendMode: "multiply" }}
-            sizes="100vw"
-            priority
-          />
+          <SlideUp delay={0} className="absolute inset-0">
+            <Image
+              src="/home5.png"
+              alt="Court Building"
+              fill
+              className="object-contain object-bottom md:mt-40 mt-20"
+              style={{ mixBlendMode: "multiply" }}
+              sizes="100vw"
+              priority
+            />
+          </SlideUp>
 
           {/* Content on top of image */}
           <div className="relative z-10 flex flex-col px-6 md:px-14 pt-14 md:pt-20 pb-10">
             {/* Centered heading */}
-            <div className="text-center mb-10 md:mb-16">
+            <FadeIn delay={100} className="text-center mb-10 md:mb-16">
               <h2
                 className="basker"
                 style={{
@@ -721,12 +815,12 @@ export default function Home() {
                 <br />
                 Responsibilities
               </h2>
-            </div>
+            </FadeIn>
 
             {/* Two paragraphs — left and right */}
             <div className="flex flex-col lg:flex-row justify-between gap-8 lg:mt-20 mt-5">
               {/* Left paragraph */}
-              <div className="w-full lg:w-[28%]">
+              <FadeIn delay={250} className="w-full lg:w-[28%]">
                 <p
                   className="dmsans"
                   style={{
@@ -743,13 +837,13 @@ export default function Home() {
                   legal practice and maintaining the dignity of the legal
                   profession.
                 </p>
-              </div>
+              </FadeIn>
 
               {/* Spacer — center gap where image shows through */}
               <div className="hidden lg:block lg:w-[36%]" />
 
               {/* Right paragraph */}
-              <div className="w-full lg:w-[30%] lg:mt-20">
+              <FadeIn delay={400} className="w-full lg:w-[30%] lg:mt-20">
                 <p
                   className="dmsans"
                   style={{
@@ -768,13 +862,13 @@ export default function Home() {
                   Pakistan&apos;s judicial system and the protection of
                   fundamental rights.
                 </p>
-              </div>
+              </FadeIn>
             </div>
           </div>
         </div>
 
         {/* ── BOTTOM: Our Mission ── */}
-        <div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-50 px-6 md:px-14 pt-4 pb-10 md:pb-14 md:mt-70 mt-30">
+        <FadeIn delay={0} className="flex flex-col sm:flex-row items-start gap-6 sm:gap-50 px-6 md:px-14 pt-4 pb-10 md:pb-14 md:mt-70 mt-30">
           <h2
             className="basker flex-shrink-0"
             style={{
@@ -803,7 +897,7 @@ export default function Home() {
             of the judiciary, and support the professional growth of lawyers
             practicing before the Islamabad High Court.
           </p>
-        </div>
+        </FadeIn>
 
         {/* ── DIVIDER ── */}
         <div className="px-6 md:px-14 pb-10 md:pb-16">
@@ -816,7 +910,7 @@ export default function Home() {
       >
         <div className="px-6 md:px-12 py-10 md:py-14">
           {/* ── Header Row ── */}
-          <div className="flex flex-col sm:flex-row items-start justify-between gap-6 sm:gap-12 mb-10 md:mb-14 w-full">
+          <FadeIn delay={0} className="flex flex-col sm:flex-row items-start justify-between gap-6 sm:gap-12 mb-10 md:mb-14 w-full">
             {/* Our Facilities */}
             <h2
               className="basker flex-shrink-0"
@@ -846,14 +940,15 @@ export default function Home() {
               of the judiciary, and support the professional growth of lawyers
               practicing before the Islamabad High Court.
             </p>
-          </div>
+          </FadeIn>
 
           {/* ── Grid of Facilities ── */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:px-30">
             {facilities.map((facility, index) => (
+              <FadeIn key={index} delay={index * 80}>
               <div
-                key={index}
-                className="bg-white flex flex-col items-center justify-center gap-3 py-8 px-4"
+                className="bg-white flex flex-col items-center justify-center gap-3 py-8 px-4 transition-all duration-300 hover:scale-105"
+                style={{ borderRadius: "11px" }}
               >
                 {/* Icon */}
                 <div className="relative flex items-center justify-center w-10 h-10">
@@ -900,6 +995,7 @@ export default function Home() {
                   {facility.label}
                 </p>
               </div>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -910,7 +1006,7 @@ export default function Home() {
       >
         <div className="px-6 md:px-12 py-10 md:py-14">
           {/* ── Header ── */}
-          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 mb-10">
+          <FadeIn delay={0} className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 mb-10">
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-3">
                 <p
@@ -993,10 +1089,11 @@ export default function Home() {
                 </svg>
               </button>
             </div>
-          </div>
+          </FadeIn>
 
           {/* ── Carousel ── */}
-          <div className="overflow-hidden" ref={trackRef}>
+          <FadeIn delay={200}>
+          <div className="overflow-hidden py-4 -my-4 px-4 -mx-4" ref={trackRef}>
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{
@@ -1007,7 +1104,7 @@ export default function Home() {
               {bearers.map((bearer, index) => (
                 <div
                   key={index}
-                  className="relative flex-shrink-0 overflow-hidden"
+                  className="relative flex-shrink-0 overflow-hidden transition-transform duration-300 hover:scale-105"
                   style={{
                     width:
                       cardWidth > 0
@@ -1094,10 +1191,12 @@ export default function Home() {
               ))}
             </div>
           </div>
+          </FadeIn>
         </div>
       </section>
       <section className="w-full bg-white px-6 md:px-14 py-14 md:py-20">
         {/* ── Heading ── */}
+        <FadeIn delay={0}>
         <div className="text-center mb-10 md:mb-14">
           <h2
             className="basker"
@@ -1111,6 +1210,7 @@ export default function Home() {
             Download
           </h2>
         </div>
+        </FadeIn>
 
         {/* ── Items grid: 2 cols on sm, 4 cols on lg ── */}
         <div className="grid grid-cols-2 lg:grid-cols-4 relative lg:px-20 px-10">
@@ -1124,9 +1224,10 @@ export default function Home() {
             // We'll handle per-breakpoint with two spans inside Card
 
             return (
+              <FadeIn key={item.num} delay={i * 60} className="h-full">
               <div
-                key={item.num}
-                className="flex flex-col items-center justify-center gap-4 py-10 px-4 relative"
+                className="flex flex-col items-center justify-center gap-4 py-10 px-4 relative cursor-pointer hover:font-bold h-full"
+                style={{ minHeight: "180px" }}
               >
                 {/* Right border: show always except smLast (hidden on sm) and lgLast (hidden on lg) */}
                 {!lgLast && (
@@ -1182,6 +1283,7 @@ export default function Home() {
                   {item.label}
                 </p>
               </div>
+              </FadeIn>
             );
           })}
         </div>
@@ -1189,6 +1291,7 @@ export default function Home() {
         {/* ── Last row: 09 and 10 centered ── */}
         {/* On lg: centered in middle 2 of 4 cols */}
         {/* On sm: 2-col full width, no right border on 2nd */}
+        <FadeIn delay={200}>
         <div className="grid grid-cols-2 lg:grid-cols-4 lg:px-20 px-10">
           {/* lg spacer left */}
           <div className="hidden lg:block" />
@@ -1196,7 +1299,8 @@ export default function Home() {
           {lastRow.map((item, i) => (
             <div
               key={item.num}
-              className="flex flex-col items-center justify-center gap-4 py-10 px-4 relative"
+              className="flex flex-col items-center justify-center gap-4 py-10 px-4 relative cursor-pointer hover:font-bold"
+              style={{ minHeight: "180px" }}
             >
               <span
                 className="absolute left-0 right-0 top-0 h-px"
@@ -1209,26 +1313,6 @@ export default function Home() {
               {i === 0 && (
                 <span
                   className="absolute right-0 top-0 bottom-0 w-px"
-                  style={{
-                    backgroundImage:
-                      "repeating-linear-gradient(to bottom, #CCCCCC 0, #CCCCCC 6px, transparent 6px, transparent 12px)",
-                  }}
-                />
-              )}
-              {/* Left border for 09 on lg (it sits in col 2) */}
-              {i === 0 && (
-                <span
-                  className="absolute left-0 top-0 bottom-0 w-px hidden lg:block"
-                  style={{
-                    backgroundImage:
-                      "repeating-linear-gradient(to bottom, #CCCCCC 0, #CCCCCC 6px, transparent 6px, transparent 12px)",
-                  }}
-                />
-              )}
-              {/* Right border for 10 on lg (closes the box) */}
-              {i === 1 && (
-                <span
-                  className="absolute right-0 top-0 bottom-0 w-px hidden lg:block"
                   style={{
                     backgroundImage:
                       "repeating-linear-gradient(to bottom, #CCCCCC 0, #CCCCCC 6px, transparent 6px, transparent 12px)",
@@ -1265,6 +1349,7 @@ export default function Home() {
           {/* lg spacer right */}
           <div className="hidden lg:block" />
         </div>
+        </FadeIn>
       </section>
       <section className="w-full">
         <div
@@ -1293,6 +1378,7 @@ export default function Home() {
           {/* ── Content ── */}
           <div className="relative z-10 flex flex-col justify-between h-full min-h-[400px] md:min-h-[520px] p-6 md:p-8">
             {/* Top: Latest Videos label */}
+            <FadeIn delay={0}>
             <p
               className="dmsans text-white"
               style={{
@@ -1303,6 +1389,7 @@ export default function Home() {
             >
               Latest Videos
             </p>
+            </FadeIn>
 
             {/* Center: Play/Pause button */}
             <div className="flex items-center justify-center flex-1 py-8">
@@ -1342,6 +1429,7 @@ export default function Home() {
             </div>
 
             {/* Bottom: Title + Thumbnails */}
+            <FadeIn delay={200}>
             <div className="flex items-end justify-between gap-4">
               {/* Video title */}
               <h2
@@ -1362,7 +1450,7 @@ export default function Home() {
                   <button
                     key={video.id}
                     onClick={() => handleThumbnailClick(video)}
-                    className="relative overflow-hidden transition-transform duration-200 hover:scale-105 active:scale-95 flex-shrink-0"
+                    className="relative overflow-hidden transition-transform duration-200 hover:scale-105 active:scale-95 flex-shrink-0 cursor-pointer"
                     style={{
                       width: "clamp(56px, 6vw, 88px)",
                       height: "clamp(40px, 4.5vw, 64px)",
@@ -1382,11 +1470,13 @@ export default function Home() {
                 ))}
               </div>
             </div>
+            </FadeIn>
           </div>
         </div>
       </section>
       <section className="w-full bg-white px-6 md:px-14 py-14 md:py-20">
         {/* ── Heading ── */}
+        <FadeIn delay={0}>
         <div className="text-center mb-10 md:mb-14">
           <h2
             className="basker"
@@ -1400,12 +1490,13 @@ export default function Home() {
             News &amp; Updates
           </h2>
         </div>
+        </FadeIn>
 
         {/* ── Cards Grid ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {articles.map((article) => (
+          {articles.map((article, i) => (
+            <FadeIn key={article.id} delay={i * 100}>
             <div
-              key={article.id}
               className="flex flex-col cursor-pointer group p-5"
               style={{
                 border: "1px solid #D9D9D9",
@@ -1422,7 +1513,7 @@ export default function Home() {
                   src={article.image}
                   alt={article.title}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
@@ -1464,10 +1555,12 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            </FadeIn>
           ))}
         </div>
 
         {/* ── View More Button ── */}
+        <FadeIn delay={300}>
         <div className="flex justify-center mt-10 md:mt-14">
           <Link
             href="/news-updates"
@@ -1482,6 +1575,7 @@ export default function Home() {
             View more
           </Link>
         </div>
+        </FadeIn>
       </section>
     </>
   );

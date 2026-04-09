@@ -60,7 +60,7 @@ export default function Bearer() {
             <input
               type="text"
               placeholder="Enter Your Name"
-              className="dmsans w-full bg-white border-0 outline-none px-4 py-3 rounded-lg"
+              className="dmsans w-full bg-white border-0 outline-none px-4 py-3 rounded-lg transition-all duration-300 hover:translate-x-1 hover:shadow-md"
               style={{
                 fontSize: "19.2px",
                 lineHeight: "32.9px",
@@ -69,6 +69,12 @@ export default function Bearer() {
                 backgroundColor: "#F7F7F7",
                 border: "1px solid #E5E5E5",
               }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.borderColor = "#143D2B")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.borderColor = "#E5E5E5")
+              }
             />
           </div>
 
@@ -87,7 +93,7 @@ export default function Bearer() {
             <input
               type="email"
               placeholder="Enter Your Email"
-              className="dmsans w-full bg-white border-0 outline-none px-4 py-3 rounded-lg"
+              className="dmsans w-full bg-white border-0 outline-none px-4 py-3 rounded-lg transition-all duration-300 hover:translate-x-1 hover:shadow-md"
               style={{
                 fontSize: "19.2px",
                 lineHeight: "32.9px",
@@ -96,6 +102,12 @@ export default function Bearer() {
                 backgroundColor: "#F7F7F7",
                 border: "1px solid #E5E5E5",
               }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.borderColor = "#143D2B")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.borderColor = "#E5E5E5")
+              }
             />
           </div>
 
@@ -114,7 +126,7 @@ export default function Bearer() {
             <textarea
               placeholder="Message goes in here..."
               rows={5}
-              className="dmsans w-full bg-white border-0 outline-none px-4 py-3 rounded-lg resize-none"
+              className="dmsans w-full bg-white border-0 outline-none px-4 py-3 rounded-lg resize-none transition-all duration-300 hover:translate-x-1 hover:shadow-md"
               style={{
                 fontSize: "19.2px",
                 lineHeight: "32.9px",
@@ -131,7 +143,7 @@ export default function Bearer() {
             <input
               type="checkbox"
               id="privacy"
-              className="w-4 h-4 rounded"
+              className="w-4 h-4 rounded cursor-pointer"
               style={{ accentColor: "#143D2B" }}
             />
             <label
@@ -144,21 +156,20 @@ export default function Bearer() {
               }}
             >
               I agree to{" "}
-              <Link href="/privacy-policy" className="underline hover:opacity-70">
+              <Link
+                href="/privacy-policy"
+                className="underline hover:opacity-70"
+              >
                 Privacy Policy
               </Link>{" "}
-              and{" "}
-              <Link href="#" className="underline hover:opacity-70">
-                Term of Conditions
-              </Link>
-              .
+              and Term of Conditions.
             </label>
           </div>
 
           {/* Submit Button */}
           <button
             type="submit"
-            className="dmsans w-full text-white rounded-full py-3"
+            className="dmsans w-full text-white rounded-full py-3 cursor-pointer transition-transform duration-300 hover:scale-105"
             style={{
               backgroundColor: "#000000",
               fontSize: "19.2px",
@@ -186,9 +197,11 @@ export default function Bearer() {
       {/* Map + Contact Info */}
       <section className="w-full py-6 flex justify-center">
         <div className="w-full max-w-2xl flex flex-col sm:flex-row gap-6">
-
           {/* Map */}
-          <div className="w-full sm:w-1/2 overflow-hidden rounded-2xl" style={{ minHeight: "300px" }}>
+          <div
+            className="w-full sm:w-1/2 overflow-hidden rounded-2xl"
+            style={{ minHeight: "300px" }}
+          >
             <iframe
               className="w-full h-full"
               style={{ minHeight: "300px", border: 0 }}
@@ -202,32 +215,55 @@ export default function Bearer() {
 
           {/* Contact Details */}
           <div className="w-full sm:w-1/2 flex flex-col gap-6 justify-center">
-
             {/* Email */}
             <div className="flex items-start gap-4">
               <div
                 className="flex-shrink-0 flex items-center justify-center"
-                style={{ backgroundColor: "#E9ECED", borderRadius: "133.08px", width: "56px", height: "56px" }}
+                style={{
+                  backgroundColor: "#E9ECED",
+                  borderRadius: "133.08px",
+                  width: "56px",
+                  height: "56px",
+                }}
               >
-                <Image src="/envelop-logo.png" alt="Email" width={24} height={24} className="object-contain" />
+                <Image
+                  src="/envelop-logo.png"
+                  alt="Email"
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                />
               </div>
               <div>
                 <p
                   className="dmsans font-semibold"
-                  style={{ fontSize: "clamp(18px, 2.5vw, 24.2px)", lineHeight: "43px", letterSpacing: "-0.02em", color: "#000000" }}
+                  style={{
+                    fontSize: "clamp(18px, 2.5vw, 24.2px)",
+                    lineHeight: "43px",
+                    letterSpacing: "-0.02em",
+                    color: "#000000",
+                  }}
                 >
                   Email
                 </p>
                 <p
                   className="dmsans text-gray-700"
-                  style={{ fontSize: "clamp(14px, 2vw, 18.82px)", lineHeight: "21.5px", letterSpacing: "0" }}
+                  style={{
+                    fontSize: "clamp(14px, 2vw, 18.82px)",
+                    lineHeight: "21.5px",
+                    letterSpacing: "0",
+                  }}
                 >
                   info@ihcba.org.pk
                 </p>
                 <a
                   href="mailto:info@ihcba.org.pk"
                   className="dmsans mt-2 inline-block border border-gray-300 rounded-full px-4 py-1 text-gray-800 hover:bg-gray-100 transition-colors"
-                  style={{ fontSize: "clamp(12px, 1.5vw, 16.13px)", lineHeight: "21.5px", letterSpacing: "0" }}
+                  style={{
+                    fontSize: "clamp(12px, 1.5vw, 16.13px)",
+                    lineHeight: "21.5px",
+                    letterSpacing: "0",
+                  }}
                 >
                   CONTACT
                 </a>
@@ -238,27 +274,51 @@ export default function Bearer() {
             <div className="flex items-start gap-4">
               <div
                 className="flex-shrink-0 flex items-center justify-center"
-                style={{ backgroundColor: "#E9ECED", borderRadius: "133.08px", width: "56px", height: "56px" }}
+                style={{
+                  backgroundColor: "#E9ECED",
+                  borderRadius: "133.08px",
+                  width: "56px",
+                  height: "56px",
+                }}
               >
-                <Image src="/phone-logo.png" alt="Phone" width={24} height={24} className="object-contain" />
+                <Image
+                  src="/phone-logo.png"
+                  alt="Phone"
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                />
               </div>
               <div>
                 <p
                   className="dmsans font-semibold"
-                  style={{ fontSize: "clamp(18px, 2.5vw, 24.2px)", lineHeight: "43px", letterSpacing: "-0.02em", color: "#000000" }}
+                  style={{
+                    fontSize: "clamp(18px, 2.5vw, 24.2px)",
+                    lineHeight: "43px",
+                    letterSpacing: "-0.02em",
+                    color: "#000000",
+                  }}
                 >
                   Phone
                 </p>
                 <p
                   className="dmsans text-gray-700"
-                  style={{ fontSize: "clamp(14px, 2vw, 18.82px)", lineHeight: "21.5px", letterSpacing: "0" }}
+                  style={{
+                    fontSize: "clamp(14px, 2vw, 18.82px)",
+                    lineHeight: "21.5px",
+                    letterSpacing: "0",
+                  }}
                 >
                   0519218058
                 </p>
                 <a
                   href="tel:0519218058"
                   className="dmsans mt-2 inline-block border border-gray-300 rounded-full px-4 py-1 text-gray-800 hover:bg-gray-100 transition-colors"
-                  style={{ fontSize: "clamp(12px, 1.5vw, 16.13px)", lineHeight: "21.5px", letterSpacing: "0" }}
+                  style={{
+                    fontSize: "clamp(12px, 1.5vw, 16.13px)",
+                    lineHeight: "21.5px",
+                    letterSpacing: "0",
+                  }}
                 >
                   CALL
                 </a>
@@ -269,35 +329,60 @@ export default function Bearer() {
             <div className="flex items-start gap-4">
               <div
                 className="flex-shrink-0 flex items-center justify-center"
-                style={{ backgroundColor: "#E9ECED", borderRadius: "133.08px", width: "56px", height: "56px" }}
+                style={{
+                  backgroundColor: "#E9ECED",
+                  borderRadius: "133.08px",
+                  width: "56px",
+                  height: "56px",
+                }}
               >
-                <Image src="/location-logo.png" alt="Address" width={24} height={24} className="object-contain" />
+                <Image
+                  src="/location-logo.png"
+                  alt="Address"
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                />
               </div>
               <div>
                 <p
                   className="dmsans font-semibold"
-                  style={{ fontSize: "clamp(18px, 2.5vw, 24.2px)", lineHeight: "43px", letterSpacing: "-0.02em", color: "#000000" }}
+                  style={{
+                    fontSize: "clamp(18px, 2.5vw, 24.2px)",
+                    lineHeight: "43px",
+                    letterSpacing: "-0.02em",
+                    color: "#000000",
+                  }}
                 >
                   Address
                 </p>
                 <p
                   className="dmsans text-gray-700"
-                  style={{ fontSize: "clamp(14px, 2vw, 18.82px)", lineHeight: "21.5px", letterSpacing: "0" }}
+                  style={{
+                    fontSize: "clamp(14px, 2vw, 18.82px)",
+                    lineHeight: "21.5px",
+                    letterSpacing: "0",
+                  }}
                 >
-                  Islamabad High Court Bar Association,<br />Constitution Avenue, G-5/1, Islamabad
+                  Islamabad High Court Bar Association,
+                  <br />
+                  Constitution Avenue, G-5/1, Islamabad
                 </p>
                 <a
                   href="https://www.google.com/maps/dir/?api=1&destination=Islamabad+High+Court+Bar+Association,+Constitution+Avenue,+G-5/1,+Islamabad"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="dmsans mt-2 inline-block border border-gray-300 rounded-full px-4 py-1 text-gray-800 hover:bg-gray-100 transition-colors"
-                  style={{ fontSize: "clamp(12px, 1.5vw, 16.13px)", lineHeight: "21.5px", letterSpacing: "0" }}
+                  style={{
+                    fontSize: "clamp(12px, 1.5vw, 16.13px)",
+                    lineHeight: "21.5px",
+                    letterSpacing: "0",
+                  }}
                 >
                   LOCATION
                 </a>
               </div>
             </div>
-
           </div>
         </div>
       </section>

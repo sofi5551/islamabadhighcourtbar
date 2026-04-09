@@ -43,6 +43,7 @@ export default function Layout({ children }) {
     },
     { label: "Search Lawyers", href: "/search-lawyers" },
     { label: "Gallery", href: "/photo-gallery" },
+    { label: "Blogs", href: "/blogs" },
     { label: "Contact", href: "/contact-us" },
   ];
 

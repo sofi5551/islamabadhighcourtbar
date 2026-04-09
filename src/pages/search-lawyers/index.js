@@ -46,13 +46,15 @@ export default function Bearer() {
         <div className="flex flex-col sm:flex-row gap-4">
           {/* Search by Name */}
           <div
-            className="flex items-center justify-between gap-3 px-5 py-4 w-full"
-            style={{ backgroundColor: "#EEEEEE", borderRadius: "20px" }}
+            className="group flex items-center justify-between gap-3 px-5 py-4 w-full transition-all duration-300 hover:shadow-md"
+            style={{ backgroundColor: "#EEEEEE", borderRadius: "20px", border: "1.5px solid transparent" }}
+            onMouseEnter={e => e.currentTarget.style.borderColor = "#143D2B"}
+            onMouseLeave={e => e.currentTarget.style.borderColor = "transparent"}
           >
             <input
               type="text"
               placeholder="Search by name"
-              className="dmsans bg-transparent outline-none border-none w-full"
+              className="dmsans bg-transparent outline-none border-none w-full transition-transform duration-300 group-hover:translate-x-1"
               style={{
                 fontSize: "clamp(14px, 2vw, 22px)",
                 lineHeight: "124%",
@@ -65,19 +67,21 @@ export default function Bearer() {
               alt="Search"
               width={22}
               height={22}
-              className="object-contain flex-shrink-0"
+              className="object-contain flex-shrink-0 transition-transform duration-300 group-hover:-translate-x-1"
             />
           </div>
 
           {/* Search by CNIC */}
           <div
-            className="flex items-center justify-between gap-3 px-5 py-4 w-full"
-            style={{ backgroundColor: "#EEEEEE", borderRadius: "20px" }}
+            className="group flex items-center justify-between gap-3 px-5 py-4 w-full transition-all duration-300 hover:shadow-md"
+            style={{ backgroundColor: "#EEEEEE", borderRadius: "20px", border: "1.5px solid transparent" }}
+            onMouseEnter={e => e.currentTarget.style.borderColor = "#143D2B"}
+            onMouseLeave={e => e.currentTarget.style.borderColor = "transparent"}
           >
             <input
               type="text"
               placeholder="Search by CNIC"
-              className="dmsans bg-transparent outline-none border-none w-full"
+              className="dmsans bg-transparent outline-none border-none w-full transition-transform duration-300 group-hover:translate-x-1"
               style={{
                 fontSize: "clamp(14px, 2vw, 22px)",
                 lineHeight: "124%",
@@ -90,7 +94,7 @@ export default function Bearer() {
               alt="Search"
               width={22}
               height={22}
-              className="object-contain flex-shrink-0"
+              className="object-contain flex-shrink-0 transition-transform duration-300 group-hover:-translate-x-1"
             />
           </div>
         </div>

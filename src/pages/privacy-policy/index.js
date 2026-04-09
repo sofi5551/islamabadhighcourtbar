@@ -1,6 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
+
+function FadeIn({ children, delay = 0, className = "" }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.style.animationDelay = `${delay}ms`;
+          el.classList.add("visible");
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [delay]);
+  return (
+    <div ref={ref} className={`fade-in-up ${className}`}>
+      {children}
+    </div>
+  );
+}
 export default function Bearer() {
   return (
     <>
@@ -42,6 +67,7 @@ export default function Bearer() {
       <section className="w-full py-6">
         <div className="bg-white px-15 py-10" style={{ borderRadius: "20px" }}>
           {/* General Provisions */}
+          <FadeIn delay={0}>
           <h2
             className="basker mb-4"
             style={{
@@ -106,8 +132,10 @@ export default function Bearer() {
               information offered through our website and which you request.
             </li>
           </ul>
+          </FadeIn>
 
           {/* Third Party Links */}
+          <FadeIn delay={100}>
           <h2
             className="basker mt-8 mb-4"
             style={{
@@ -170,8 +198,10 @@ export default function Bearer() {
               law.
             </li>
           </ul>
+          </FadeIn>
 
           {/* Other Uses of Information */}
+          <FadeIn delay={200}>
           <h2
             className="basker mt-8 mb-4"
             style={{
@@ -210,8 +240,10 @@ export default function Bearer() {
               however you have an option to unsubscribe to it.
             </li>
           </ul>
+          </FadeIn>
 
           {/* Security */}
+          <FadeIn delay={300}>
           <h2
             className="basker mt-8 mb-4"
             style={{
@@ -238,8 +270,10 @@ export default function Bearer() {
               unauthorized access to your password and to your computer.
             </li>
           </ul>
+          </FadeIn>
 
           {/* Your Rights */}
+          <FadeIn delay={400}>
           <h2
             className="basker mt-8 mb-4"
             style={{
@@ -274,6 +308,7 @@ export default function Bearer() {
               your data free of charge.
             </li>
           </ul>
+          </FadeIn>
         </div>
       </section>
     </>

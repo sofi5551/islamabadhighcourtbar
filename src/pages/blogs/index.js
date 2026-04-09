@@ -94,7 +94,7 @@ function BlogCard({ blog }) {
 
   return (
     <div
-      className="flex flex-col p-3"
+      className="flex flex-col p-3 transition-transform duration-300 hover:scale-105"
       style={{ backgroundColor: "#F3F3F3", borderRadius: "14.32px" }}
     >
       {/* Image */}
@@ -258,7 +258,7 @@ export default function Blogs() {
 
       {/* Blog Cards */}
       <section className="w-full py-15 px-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 items-start p-2">
           {blogs.map((blog) => (
             <BlogCard key={blog.id} blog={blog} />
           ))}

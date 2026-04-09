@@ -317,9 +317,9 @@ export default function NewsUpdates() {
 
       {/* News Grid */}
       <section className="w-full py-15 px-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 p-2">
           {pageData.map((item) => (
-            <div key={item.id} className="flex flex-row gap-3 items-start">
+            <div key={item.id} className="flex flex-row gap-3 items-start cursor-pointer transition-transform duration-300 hover:scale-105">
               {/* Image */}
               <div className="flex-shrink-0">
                 <Image

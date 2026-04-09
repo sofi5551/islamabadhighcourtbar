@@ -1,6 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
+
+function FadeIn({ children, delay = 0, className = "" }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.style.animationDelay = `${delay}ms`;
+          el.classList.add("visible");
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [delay]);
+  return (
+    <div ref={ref} className={`fade-in-up ${className}`}>
+      {children}
+    </div>
+  );
+}
+
 const councils = [
   {
     label: "KP Bar Council",
@@ -65,10 +91,10 @@ export default function Bearer() {
         </div>
       </section>
       <section className="w-full bg-white px-6 md:px-14 py-14 md:py-20">
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
           {councils.map((council, i) => (
+            <FadeIn key={i} delay={i * 100}>
             <Link
-              key={i}
               href={council.href}
               target="_blank"
               rel="noopener noreferrer"
@@ -79,7 +105,7 @@ export default function Bearer() {
                 style={{
                   backgroundColor: "#EEEEEE",
                   borderRadius: "20px",
-                  width: "clamp(140px, 18vw, 200px)",
+                  width: "260px",
                 }}
               >
                 {/* White image box */}
@@ -115,6 +141,7 @@ export default function Bearer() {
                 </p>
               </div>
             </Link>
+            </FadeIn>
           ))}
         </div>
       </section>

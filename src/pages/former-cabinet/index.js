@@ -109,12 +109,12 @@ export default function Bearer() {
       <section className="w-full overflow-hidden mt-5">
         <div className="px-6 md:px-12 py-10 md:py-14">
           {/* ── Carousel ── */}
-          <div className="overflow-hidden">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="overflow-visible">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-2">
               {bearers.map((bearer, index) => (
                 <div
                   key={index}
-                  className="relative overflow-hidden rounded-xl"
+                  className="relative overflow-hidden rounded-xl cursor-pointer transition-transform duration-300 hover:scale-105"
                 >
                   <div className="relative w-full aspect-[3/4]">
                     <Image
