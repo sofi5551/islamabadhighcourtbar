@@ -14,7 +14,7 @@ function FadeIn({ children, delay = 0, className = "" }) {
           observer.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -83,7 +83,10 @@ export default function SecretaryMessage() {
       <section className="w-full bg-white px-6 md:px-16 py-16 md:py-24">
         <div className="flex flex-col lg:flex-row items-stretch gap-10 lg:gap-16">
           {/* Person Image */}
-          <FadeIn delay={0} className="relative w-full lg:flex-1 rounded-lg overflow-hidden">
+          <FadeIn
+            delay={0}
+            className="relative w-full lg:flex-1 rounded-lg overflow-hidden"
+          >
             <Image
               src={bearer.personImage}
               alt={bearer.name}
@@ -138,7 +141,7 @@ export default function SecretaryMessage() {
               style={{
                 fontSize: "clamp(13px, 1.1vw, 20px)",
                 lineHeight: "124%",
-                letterSpacing: "-0.04em",
+                letterSpacing: "-0.01em",
                 color: "#1E1E1E",
                 fontWeight: "600",
               }}

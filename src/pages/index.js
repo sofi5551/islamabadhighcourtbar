@@ -15,7 +15,7 @@ function FadeIn({ children, delay = 0, className = "" }) {
           observer.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -40,7 +40,7 @@ function SlideUp({ children, delay = 0, className = "" }) {
           observer.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -65,7 +65,7 @@ function SpinIn({ children, delay = 0, className = "" }) {
           observer.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -446,22 +446,27 @@ export default function Home() {
                 {/* CTA Buttons */}
                 <div className="flex flex-wrap  self-end gap-3 mt-2 md:mt-0">
                   <button
-                    className="dmsans flex items-center gap-2 px-5 py-3 rounded-full border border-white text-white cursor-pointer transition-all duration-200 hover:bg-white hover:text-green-900 hover:border-green-900 hover:scale-105 group"
+                    className="dmsans px-5 py-3 rounded-full border border-white text-white cursor-pointer transition-all duration-200 hover:bg-white hover:text-green-900 hover:border-green-900 hover:scale-105 group"
                     style={{
                       fontSize: "14px",
                       backdropFilter: "blur(6px)",
                       backgroundColor: "rgba(255,255,255,0.08)",
                     }}
                   >
-                    <Image
-                      src="/lawyer-logo.png"
-                      alt="Lawyer"
-                      width={20}
-                      height={20}
-                      className="object-contain transition-all duration-200 group-hover:[filter:invert(21%)_sepia(57%)_saturate(628%)_hue-rotate(103deg)_brightness(92%)_contrast(103%)]"
-                      style={{ filter: "brightness(0) invert(1)" }}
-                    />
-                    Lawyer Search
+                    <Link
+                      href="/search-lawyers"
+                      className="flex items-center gap-2"
+                    >
+                      <Image
+                        src="/lawyer-logo.png"
+                        alt="Lawyer"
+                        width={20}
+                        height={20}
+                        className="object-contain transition-all duration-200 group-hover:[filter:invert(21%)_sepia(57%)_saturate(628%)_hue-rotate(103deg)_brightness(92%)_contrast(103%)]"
+                        style={{ filter: "brightness(0) invert(1)" }}
+                      />
+                      <span>Lawyer Search</span>
+                    </Link>
                   </button>
 
                   <button
@@ -511,208 +516,208 @@ export default function Home() {
       <section className="w-full bg-white px-6 md:px-16 py-16 md:py-24 flex flex-col gap-20">
         {/* ── PRESIDENT ROW ── */}
         <FadeIn delay={0}>
-        <div className="flex flex-col lg:flex-row items-stretch gap-10 lg:gap-16">
-          {/* Image */}
-          <div className="relative w-full lg:flex-1 rounded-lg overflow-hidden">
-            <Image
-              src="/home2.png"
-              alt="President"
-              width={604}
-              height={654}
-              className="w-full h-full object-cover"
-            />
-            {/* President label — bottom right */}
-            <div
-              className="absolute bottom-4 right-4 text-right text-white"
-              style={{
-                fontFamily: "var(--font-baskervville)",
-                fontSize: "clamp(12px, 1.5vw, 20px)",
-                lineHeight: "95%",
-                letterSpacing: "-0.04em",
-                textTransform: "uppercase",
-              }}
-            >
-              PRESIDENT FOR
-              <br />
-              YEAR 2025
+          <div className="flex flex-col lg:flex-row items-stretch gap-10 lg:gap-16">
+            {/* Image */}
+            <div className="relative w-full lg:flex-1 rounded-lg overflow-hidden">
+              <Image
+                src="/home2.png"
+                alt="President"
+                width={604}
+                height={654}
+                className="w-full h-full object-cover"
+              />
+              {/* President label — bottom right */}
+              <div
+                className="absolute bottom-4 right-4 text-right text-white"
+                style={{
+                  fontFamily: "var(--font-baskervville)",
+                  fontSize: "clamp(12px, 1.5vw, 20px)",
+                  lineHeight: "95%",
+                  letterSpacing: "-0.04em",
+                  textTransform: "uppercase",
+                }}
+              >
+                PRESIDENT FOR
+                <br />
+                YEAR 2025
+              </div>
+            </div>
+
+            {/* Text */}
+            <div className="flex flex-col gap-4 w-full lg:flex-1">
+              <p
+                className="dmsans"
+                style={{
+                  fontWeight: "700",
+                  fontSize: "clamp(12px, 1.2vw, 20px)",
+                  lineHeight: "95%",
+                  letterSpacing: "-0.04em",
+                  color: "#595959",
+                  textTransform: "uppercase",
+                }}
+              >
+                Excellence is not an exception
+              </p>
+
+              <h2
+                className="basker"
+                style={{
+                  fontSize: "clamp(28px, 4vw, 64px)",
+                  lineHeight: "95%",
+                  letterSpacing: "-0.04em",
+                  color: "#1E1E1E",
+                }}
+              >
+                Mr. Syed Wajid Ali Shah
+                <br />
+                GIllani Advocate
+              </h2>
+
+              <p
+                className="dmsans"
+                style={{
+                  fontSize: "clamp(13px, 1.1vw, 20px)",
+                  lineHeight: "124%",
+                  letterSpacing: "-0.01em",
+                  color: "#1E1E1E",
+                  fontWeight: "600",
+                }}
+              >
+                Dear fellow members of the Islamabad High Court Bar Association,
+              </p>
+
+              <div
+                className="dmsans flex flex-col gap-3"
+                style={{
+                  fontSize: "clamp(13px, 1.8vw, 24px)",
+                  lineHeight: "124%",
+                  letterSpacing: "-0.04em",
+                  color: "#595959",
+                }}
+              >
+                <p>
+                  I, Syed Wajid Ali Shah Gillani, Advocate Supreme Court, am
+                  deeply honored to accept the responsibility of serving as your
+                  President. I am grateful for your trust and remain committed
+                  to upholding the values and principles of our association.
+                </p>
+                <p>
+                  In these challenging times, it is our collective duty to
+                  protect the rule of law and ensure justice remains accessible
+                  to all. I look forward to working closely with you, listening
+                  to your ideas and concerns, and shaping initiatives that
+                  reflect the aspirations of our members.
+                </p>
+                <p>
+                  Together, we can strengthen our association and contribute
+                  positively to the legal community and society.
+                </p>
+                <p>Sincerely,</p>
+              </div>
             </div>
           </div>
-
-          {/* Text */}
-          <div className="flex flex-col gap-4 w-full lg:flex-1">
-            <p
-              className="dmsans"
-              style={{
-                fontWeight: "700",
-                fontSize: "clamp(12px, 1.2vw, 20px)",
-                lineHeight: "95%",
-                letterSpacing: "-0.04em",
-                color: "#595959",
-                textTransform: "uppercase",
-              }}
-            >
-              Excellence is not an exception
-            </p>
-
-            <h2
-              className="basker"
-              style={{
-                fontSize: "clamp(28px, 4vw, 64px)",
-                lineHeight: "95%",
-                letterSpacing: "-0.04em",
-                color: "#1E1E1E",
-              }}
-            >
-              Mr. Syed Wajid Ali Shah
-              <br />
-              GIllani Advocate
-            </h2>
-
-            <p
-              className="dmsans"
-              style={{
-                fontSize: "clamp(13px, 1.1vw, 20px)",
-                lineHeight: "124%",
-                letterSpacing: "-0.04em",
-                color: "#1E1E1E",
-                fontWeight: "600",
-              }}
-            >
-              Dear fellow members of the Islamabad High Court Bar Association,
-            </p>
-
-            <div
-              className="dmsans flex flex-col gap-3"
-              style={{
-                fontSize: "clamp(13px, 1.1vw, 20px)",
-                lineHeight: "124%",
-                letterSpacing: "-0.04em",
-                color: "#595959",
-              }}
-            >
-              <p>
-                I, Syed Wajid Ali Shah Gillani, Advocate Supreme Court, am
-                deeply honored to accept the responsibility of serving as your
-                President. I am grateful for your trust and remain committed to
-                upholding the values and principles of our association.
-              </p>
-              <p>
-                In these challenging times, it is our collective duty to protect
-                the rule of law and ensure justice remains accessible to all. I
-                look forward to working closely with you, listening to your
-                ideas and concerns, and shaping initiatives that reflect the
-                aspirations of our members.
-              </p>
-              <p>
-                Together, we can strengthen our association and contribute
-                positively to the legal community and society.
-              </p>
-              <p>Sincerely,</p>
-            </div>
-          </div>
-        </div>
         </FadeIn>
 
         {/* ── SECRETARY ROW ── */}
         <FadeIn delay={200}>
-        <div className="flex flex-col lg:flex-row-reverse items-stretch gap-10 lg:gap-16">
-          {/* Image */}
-          <div className="relative w-full lg:flex-1 rounded-lg overflow-hidden">
-            <Image
-              src="/home3.png"
-              alt="Secretary"
-              width={604}
-              height={654}
-              className="w-full h-full object-cover"
-            />
-            {/* Secretary label — bottom left */}
-            <div
-              className="absolute bottom-4 left-4 text-left text-white"
-              style={{
-                fontFamily: "var(--font-baskervville)",
-                fontSize: "clamp(12px, 1.5vw, 20px)",
-                lineHeight: "95%",
-                letterSpacing: "-0.04em",
-                textTransform: "uppercase",
-              }}
-            >
-              SECRETARY FOR
-              <br />
-              YEAR 2025
+          <div className="flex flex-col lg:flex-row-reverse items-stretch gap-10 lg:gap-16">
+            {/* Image */}
+            <div className="relative w-full lg:flex-1 rounded-lg overflow-hidden">
+              <Image
+                src="/home3.png"
+                alt="Secretary"
+                width={604}
+                height={654}
+                className="w-full h-full object-cover"
+              />
+              {/* Secretary label — bottom left */}
+              <div
+                className="absolute bottom-4 left-4 text-left text-white"
+                style={{
+                  fontFamily: "var(--font-baskervville)",
+                  fontSize: "clamp(12px, 1.5vw, 20px)",
+                  lineHeight: "95%",
+                  letterSpacing: "-0.04em",
+                  textTransform: "uppercase",
+                }}
+              >
+                SECRETARY FOR
+                <br />
+                YEAR 2025
+              </div>
+            </div>
+
+            {/* Text */}
+            <div className="flex flex-col gap-4 w-full lg:flex-1">
+              <p
+                className="dmsans"
+                style={{
+                  fontWeight: "700",
+                  fontSize: "clamp(12px, 1.2vw, 20px)",
+                  lineHeight: "95%",
+                  letterSpacing: "-0.04em",
+                  color: "#595959",
+                  textTransform: "uppercase",
+                }}
+              >
+                Secretary Message
+              </p>
+
+              <h2
+                className="basker"
+                style={{
+                  fontSize: "clamp(28px, 4vw, 64px)",
+                  lineHeight: "95%",
+                  letterSpacing: "-0.04em",
+                  color: "#1E1E1E",
+                }}
+              >
+                Mr. Manzoor Ahmed
+                <br />
+                Jajja Advocate
+              </h2>
+
+              <p
+                className="dmsans"
+                style={{
+                  fontSize: "clamp(13px, 1.1vw, 20px)",
+                  lineHeight: "124%",
+                  letterSpacing: "-0.01em",
+                  color: "#1E1E1E",
+                  fontWeight: "600",
+                }}
+              >
+                Dear fellow members of the Islamabad High Court Bar Association,
+              </p>
+
+              <div
+                className="dmsans flex flex-col gap-3"
+                style={{
+                  fontSize: "clamp(13px, 1.8vw, 24px)",
+                  lineHeight: "124%",
+                  letterSpacing: "-0.04em",
+                  color: "#595959",
+                }}
+              >
+                <p>
+                  It is with great pleasure and a deep sense of gratitude that
+                  I, Manzoor Ahmed Jajja, Advocate High Court, accept the honor
+                  of serving as your President. I am humbled by the trust you
+                  have placed in me, and I pledge to work tirelessly to uphold
+                  the values and principles that our association stands for.
+                </p>
+                <p>
+                  As we embark on this new journey together, I am keenly aware
+                  of the challenges that lie ahead. We live in a time of great
+                  uncertainty and upheaval, where the rule of law and the
+                  independence of the judiciary are under constant threat. It is
+                  up to us, as lawyers and legal professionals, to safeguard
+                  these fundamental principles and to ensure that justice is
+                  accessible to all.
+                </p>
+              </div>
             </div>
           </div>
-
-          {/* Text */}
-          <div className="flex flex-col gap-4 w-full lg:flex-1">
-            <p
-              className="dmsans"
-              style={{
-                fontWeight: "700",
-                fontSize: "clamp(12px, 1.2vw, 20px)",
-                lineHeight: "95%",
-                letterSpacing: "-0.04em",
-                color: "#595959",
-                textTransform: "uppercase",
-              }}
-            >
-              Secretary Message
-            </p>
-
-            <h2
-              className="basker"
-              style={{
-                fontSize: "clamp(28px, 4vw, 64px)",
-                lineHeight: "95%",
-                letterSpacing: "-0.04em",
-                color: "#1E1E1E",
-              }}
-            >
-              Mr. Manzoor Ahmed
-              <br />
-              Jajja Advocate
-            </h2>
-
-            <p
-              className="dmsans"
-              style={{
-                fontSize: "clamp(13px, 1.1vw, 20px)",
-                lineHeight: "124%",
-                letterSpacing: "-0.04em",
-                color: "#1E1E1E",
-                fontWeight: "600",
-              }}
-            >
-              Dear fellow members of the Islamabad High Court Bar Association,
-            </p>
-
-            <div
-              className="dmsans flex flex-col gap-3"
-              style={{
-                fontSize: "clamp(13px, 1.1vw, 20px)",
-                lineHeight: "124%",
-                letterSpacing: "-0.04em",
-                color: "#595959",
-              }}
-            >
-              <p>
-                It is with great pleasure and a deep sense of gratitude that I,
-                Manzoor Ahmed Jajja, Advocate High Court, accept the honor of
-                serving as your President. I am humbled by the trust you have
-                placed in me, and I pledge to work tirelessly to uphold the
-                values and principles that our association stands for.
-              </p>
-              <p>
-                As we embark on this new journey together, I am keenly aware of
-                the challenges that lie ahead. We live in a time of great
-                uncertainty and upheaval, where the rule of law and the
-                independence of the judiciary are under constant threat. It is
-                up to us, as lawyers and legal professionals, to safeguard these
-                fundamental principles and to ensure that justice is accessible
-                to all.
-              </p>
-            </div>
-          </div>
-        </div>
         </FadeIn>
       </section>
       <section
@@ -722,7 +727,10 @@ export default function Home() {
         {/* Content + Image side by side */}
         <div className="flex flex-col lg:flex-row items-stretch">
           {/* Left: Text Content */}
-          <FadeIn delay={0} className="flex flex-col justify-center gap-6 px-8 md:px-14 py-14 lg:py-16 w-full lg:w-1/2">
+          <FadeIn
+            delay={0}
+            className="flex flex-col justify-center gap-6 px-8 md:px-14 py-14 lg:py-16 w-full lg:w-1/2"
+          >
             <h2
               className="basker text-white"
               style={{
@@ -771,7 +779,10 @@ export default function Home() {
           </FadeIn>
 
           {/* Right: Image */}
-          <FadeIn delay={200} className="relative w-full lg:w-1/2 min-h-[300px] lg:min-h-0">
+          <FadeIn
+            delay={200}
+            className="relative w-full lg:w-1/2 min-h-[300px] lg:min-h-0"
+          >
             <Image
               src="/home4.png"
               alt="About The Bar"
@@ -868,7 +879,10 @@ export default function Home() {
         </div>
 
         {/* ── BOTTOM: Our Mission ── */}
-        <FadeIn delay={0} className="flex flex-col sm:flex-row items-start gap-6 sm:gap-50 px-6 md:px-14 pt-4 pb-10 md:pb-14 md:mt-70 mt-30">
+        <FadeIn
+          delay={0}
+          className="flex flex-col sm:flex-row items-start gap-6 sm:gap-50 px-6 md:px-14 pt-4 pb-10 md:pb-14 md:mt-70 mt-30"
+        >
           <h2
             className="basker flex-shrink-0"
             style={{
@@ -910,7 +924,10 @@ export default function Home() {
       >
         <div className="px-6 md:px-12 py-10 md:py-14">
           {/* ── Header Row ── */}
-          <FadeIn delay={0} className="flex flex-col sm:flex-row items-start justify-between gap-6 sm:gap-12 mb-10 md:mb-14 w-full">
+          <FadeIn
+            delay={0}
+            className="flex flex-col sm:flex-row items-start justify-between gap-6 sm:gap-12 mb-10 md:mb-14 w-full"
+          >
             {/* Our Facilities */}
             <h2
               className="basker flex-shrink-0"
@@ -946,55 +963,55 @@ export default function Home() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:px-30">
             {facilities.map((facility, index) => (
               <FadeIn key={index} delay={index * 80}>
-              <div
-                className="bg-white flex flex-col items-center justify-center gap-3 py-8 px-4 transition-all duration-300 hover:scale-105"
-                style={{ borderRadius: "11px" }}
-              >
-                {/* Icon */}
-                <div className="relative flex items-center justify-center w-10 h-10">
-                  {facility.icon ? (
-                    <Image
-                      src={facility.icon}
-                      alt={facility.label}
-                      width={40}
-                      height={40}
-                      className="object-contain"
-                    />
-                  ) : (
-                    /* Homeopathic Clinic — house + plus overlapping */
-                    <div className="relative w-10 h-10">
+                <div
+                  className="bg-white flex flex-col items-center justify-center gap-3 py-8 px-4 transition-all duration-300 hover:scale-105"
+                  style={{ borderRadius: "11px" }}
+                >
+                  {/* Icon */}
+                  <div className="relative flex items-center justify-center w-10 h-10">
+                    {facility.icon ? (
                       <Image
-                        src="/homeopathic-clinic-house-logo.png"
-                        alt="Homeopathic Clinic House"
+                        src={facility.icon}
+                        alt={facility.label}
                         width={40}
                         height={40}
                         className="object-contain"
                       />
-                      <Image
-                        src="/homeopathic-clinic-plus-logo.png"
-                        alt="Homeopathic Clinic Plus"
-                        width={18}
-                        height={18}
-                        className="object-contain absolute"
-                        style={{ bottom: "7px", right: "11px" }}
-                      />
-                    </div>
-                  )}
-                </div>
+                    ) : (
+                      /* Homeopathic Clinic — house + plus overlapping */
+                      <div className="relative w-10 h-10">
+                        <Image
+                          src="/homeopathic-clinic-house-logo.png"
+                          alt="Homeopathic Clinic House"
+                          width={40}
+                          height={40}
+                          className="object-contain"
+                        />
+                        <Image
+                          src="/homeopathic-clinic-plus-logo.png"
+                          alt="Homeopathic Clinic Plus"
+                          width={18}
+                          height={18}
+                          className="object-contain absolute"
+                          style={{ bottom: "7px", right: "11px" }}
+                        />
+                      </div>
+                    )}
+                  </div>
 
-                {/* Label */}
-                <p
-                  className="basker text-center whitespace-pre-line"
-                  style={{
-                    fontSize: "clamp(13px, 1.2vw, 26px)",
-                    lineHeight: "95%",
-                    letterSpacing: "-0.04em",
-                    color: "#000000",
-                  }}
-                >
-                  {facility.label}
-                </p>
-              </div>
+                  {/* Label */}
+                  <p
+                    className="basker text-center whitespace-pre-line"
+                    style={{
+                      fontSize: "clamp(13px, 1.2vw, 26px)",
+                      lineHeight: "95%",
+                      letterSpacing: "-0.04em",
+                      color: "#000000",
+                    }}
+                  >
+                    {facility.label}
+                  </p>
+                </div>
               </FadeIn>
             ))}
           </div>
@@ -1006,7 +1023,10 @@ export default function Home() {
       >
         <div className="px-6 md:px-12 py-10 md:py-14">
           {/* ── Header ── */}
-          <FadeIn delay={0} className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 mb-10">
+          <FadeIn
+            delay={0}
+            className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 mb-10"
+          >
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-3">
                 <p
@@ -1093,123 +1113,126 @@ export default function Home() {
 
           {/* ── Carousel ── */}
           <FadeIn delay={200}>
-          <div className="overflow-hidden py-4 -my-4 px-4 -mx-4" ref={trackRef}>
             <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{
-                gap: `${GAP}px`,
-                transform: `translateX(-${translateX}px)`,
-              }}
+              className="overflow-hidden py-4 -my-4 px-4 -mx-4"
+              ref={trackRef}
             >
-              {bearers.map((bearer, index) => (
-                <div
-                  key={index}
-                  className="relative flex-shrink-0 overflow-hidden transition-transform duration-300 hover:scale-105"
-                  style={{
-                    width:
-                      cardWidth > 0
-                        ? `${cardWidth}px`
-                        : `calc((100% - ${GAP * (visibleCount - 1)}px) / ${visibleCount})`,
-                    borderRadius: "12px",
-                  }}
-                >
+              <div
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{
+                  gap: `${GAP}px`,
+                  transform: `translateX(-${translateX}px)`,
+                }}
+              >
+                {bearers.map((bearer, index) => (
                   <div
-                    className="relative w-full"
-                    style={{ aspectRatio: "3/4" }}
+                    key={index}
+                    className="relative flex-shrink-0 overflow-hidden transition-transform duration-300 hover:scale-105"
+                    style={{
+                      width:
+                        cardWidth > 0
+                          ? `${cardWidth}px`
+                          : `calc((100% - ${GAP * (visibleCount - 1)}px) / ${visibleCount})`,
+                      borderRadius: "12px",
+                    }}
                   >
-                    <Image
-                      src={bearer.image}
-                      alt={bearer.name}
-                      fill
-                      className="object-cover object-top"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    />
-
                     <div
-                      className="absolute inset-0"
-                      style={{
-                        background:
-                          "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, transparent 100%)",
-                      }}
-                    />
+                      className="relative w-full"
+                      style={{ aspectRatio: "3/4" }}
+                    >
+                      <Image
+                        src={bearer.image}
+                        alt={bearer.name}
+                        fill
+                        className="object-cover object-top"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      />
 
-                    <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between gap-2">
-                      <div className="flex flex-col gap-1">
-                        <p
-                          className="basker text-white whitespace-pre-line"
-                          style={{
-                            fontSize: "clamp(13px, 1.3vw, 20px)",
-                            lineHeight: "95%",
-                            letterSpacing: "-0.04em",
-                          }}
-                        >
-                          {bearer.name}
-                        </p>
-                        <p
-                          className="dmsans text-white"
-                          style={{
-                            fontSize: "clamp(11px, 1.1vw, 18px)",
-                            lineHeight: "120%",
-                            letterSpacing: "-0.03em",
-                            opacity: 0.85,
-                          }}
-                        >
-                          {bearer.designation}
-                        </p>
-                        <p
-                          className="dmsans text-white"
-                          style={{
-                            fontSize: "clamp(11px, 1.1vw, 18px)",
-                            lineHeight: "120%",
-                            letterSpacing: "-0.03em",
-                            opacity: 0.85,
-                          }}
-                        >
-                          {bearer.post}
-                        </p>
-                      </div>
-                      {/* <Link href={`/current-cabinet/${bearer.slug}`}> */}
                       <div
-                        className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center"
+                        className="absolute inset-0"
                         style={{
-                          backgroundColor: "#1E6228",
-                          cursor: "pointer",
+                          background:
+                            "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, transparent 100%)",
                         }}
-                      >
-                        <Image
-                          src="/tilted-white-arrow.png"
-                          alt="Arrow"
-                          width={16}
-                          height={16}
-                          className="object-contain"
-                        />
+                      />
+
+                      <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between gap-2">
+                        <div className="flex flex-col gap-1">
+                          <p
+                            className="basker text-white whitespace-pre-line"
+                            style={{
+                              fontSize: "clamp(13px, 1.3vw, 20px)",
+                              lineHeight: "95%",
+                              letterSpacing: "-0.04em",
+                            }}
+                          >
+                            {bearer.name}
+                          </p>
+                          <p
+                            className="dmsans text-white"
+                            style={{
+                              fontSize: "clamp(11px, 1.1vw, 18px)",
+                              lineHeight: "120%",
+                              letterSpacing: "-0.03em",
+                              opacity: 0.85,
+                            }}
+                          >
+                            {bearer.designation}
+                          </p>
+                          <p
+                            className="dmsans text-white"
+                            style={{
+                              fontSize: "clamp(11px, 1.1vw, 18px)",
+                              lineHeight: "120%",
+                              letterSpacing: "-0.03em",
+                              opacity: 0.85,
+                            }}
+                          >
+                            {bearer.post}
+                          </p>
+                        </div>
+                        {/* <Link href={`/current-cabinet/${bearer.slug}`}> */}
+                        <div
+                          className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center"
+                          style={{
+                            backgroundColor: "#1E6228",
+                            cursor: "pointer",
+                          }}
+                        >
+                          <Image
+                            src="/tilted-white-arrow.png"
+                            alt="Arrow"
+                            width={16}
+                            height={16}
+                            className="object-contain"
+                          />
+                        </div>
+                        {/* </Link> */}
                       </div>
-                      {/* </Link> */}
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
           </FadeIn>
         </div>
       </section>
       <section className="w-full bg-white px-6 md:px-14 py-14 md:py-20">
         {/* ── Heading ── */}
         <FadeIn delay={0}>
-        <div className="text-center mb-10 md:mb-14">
-          <h2
-            className="basker"
-            style={{
-              fontSize: "clamp(36px, 5vw, 64px)",
-              lineHeight: "95%",
-              letterSpacing: "-0.04em",
-              color: "#000000",
-            }}
-          >
-            Download
-          </h2>
-        </div>
+          <div className="text-center mb-10 md:mb-14">
+            <h2
+              className="basker"
+              style={{
+                fontSize: "clamp(36px, 5vw, 64px)",
+                lineHeight: "95%",
+                letterSpacing: "-0.04em",
+                color: "#000000",
+              }}
+            >
+              Download
+            </h2>
+          </div>
         </FadeIn>
 
         {/* ── Items grid: 2 cols on sm, 4 cols on lg ── */}
@@ -1225,36 +1248,97 @@ export default function Home() {
 
             return (
               <FadeIn key={item.num} delay={i * 60} className="h-full">
-              <div
-                className="flex flex-col items-center justify-center gap-4 py-10 px-4 relative cursor-pointer hover:font-bold h-full"
-                style={{ minHeight: "180px" }}
-              >
-                {/* Right border: show always except smLast (hidden on sm) and lgLast (hidden on lg) */}
-                {!lgLast && (
+                <div
+                  className="flex flex-col items-center justify-center gap-4 py-10 px-4 relative cursor-pointer hover:font-bold h-full"
+                  style={{ minHeight: "180px" }}
+                >
+                  {/* Right border: show always except smLast (hidden on sm) and lgLast (hidden on lg) */}
+                  {!lgLast && (
+                    <span
+                      className={`absolute right-0 top-0 bottom-0 w-px ${smLast ? "hidden lg:block" : "block"}`}
+                      style={{
+                        backgroundImage:
+                          "repeating-linear-gradient(to bottom, #CCCCCC 0, #CCCCCC 6px, transparent 6px, transparent 12px)",
+                      }}
+                    />
+                  )}
+
+                  {/* Bottom border on lg: rows 1 and 2 (not row 3) → i < 4 */}
                   <span
-                    className={`absolute right-0 top-0 bottom-0 w-px ${smLast ? "hidden lg:block" : "block"}`}
+                    className={`absolute left-0 right-0 bottom-0 h-px ${i < 4 ? "block" : "hidden lg:block"}`}
                     style={{
                       backgroundImage:
-                        "repeating-linear-gradient(to bottom, #CCCCCC 0, #CCCCCC 6px, transparent 6px, transparent 12px)",
+                        "repeating-linear-gradient(to right, #CCCCCC 0, #CCCCCC 6px, transparent 6px, transparent 12px)",
                     }}
                   />
-                )}
+                  {/* Bottom border on sm: every row except last two (i < 6) */}
+                  {i >= 4 && i < 6 && (
+                    <span
+                      className="absolute left-0 right-0 bottom-0 h-px lg:hidden"
+                      style={{
+                        backgroundImage:
+                          "repeating-linear-gradient(to right, #CCCCCC 0, #CCCCCC 6px, transparent 6px, transparent 12px)",
+                      }}
+                    />
+                  )}
 
-                {/* Bottom border on lg: rows 1 and 2 (not row 3) → i < 4 */}
+                  <div
+                    className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{ backgroundColor: "#143D2B" }}
+                  >
+                    <Image
+                      src={`/${item.num}.png`}
+                      alt={item.num}
+                      width={28}
+                      height={28}
+                      className="object-contain"
+                    />
+                  </div>
+                  <p
+                    className="basker text-center whitespace-pre-line"
+                    style={{
+                      fontSize: "clamp(13px, 1.5vw, 26px)",
+                      lineHeight: "95%",
+                      letterSpacing: "-0.04em",
+                      color: "#000000",
+                    }}
+                  >
+                    {item.label}
+                  </p>
+                </div>
+              </FadeIn>
+            );
+          })}
+        </div>
+
+        {/* ── Last row: 09 and 10 centered ── */}
+        {/* On lg: centered in middle 2 of 4 cols */}
+        {/* On sm: 2-col full width, no right border on 2nd */}
+        <FadeIn delay={200}>
+          <div className="grid grid-cols-2 lg:grid-cols-4 lg:px-20 px-10">
+            {/* lg spacer left */}
+            <div className="hidden lg:block" />
+
+            {lastRow.map((item, i) => (
+              <div
+                key={item.num}
+                className="flex flex-col items-center justify-center gap-4 py-10 px-4 relative cursor-pointer hover:font-bold"
+                style={{ minHeight: "180px" }}
+              >
                 <span
-                  className={`absolute left-0 right-0 bottom-0 h-px ${i < 4 ? "block" : "hidden lg:block"}`}
+                  className="absolute left-0 right-0 top-0 h-px"
                   style={{
                     backgroundImage:
                       "repeating-linear-gradient(to right, #CCCCCC 0, #CCCCCC 6px, transparent 6px, transparent 12px)",
                   }}
                 />
-                {/* Bottom border on sm: every row except last two (i < 6) */}
-                {i >= 4 && i < 6 && (
+                {/* Right border: only between 09 and 10 */}
+                {i === 0 && (
                   <span
-                    className="absolute left-0 right-0 bottom-0 h-px lg:hidden"
+                    className="absolute right-0 top-0 bottom-0 w-px"
                     style={{
                       backgroundImage:
-                        "repeating-linear-gradient(to right, #CCCCCC 0, #CCCCCC 6px, transparent 6px, transparent 12px)",
+                        "repeating-linear-gradient(to bottom, #CCCCCC 0, #CCCCCC 6px, transparent 6px, transparent 12px)",
                     }}
                   />
                 )}
@@ -1283,72 +1367,11 @@ export default function Home() {
                   {item.label}
                 </p>
               </div>
-              </FadeIn>
-            );
-          })}
-        </div>
+            ))}
 
-        {/* ── Last row: 09 and 10 centered ── */}
-        {/* On lg: centered in middle 2 of 4 cols */}
-        {/* On sm: 2-col full width, no right border on 2nd */}
-        <FadeIn delay={200}>
-        <div className="grid grid-cols-2 lg:grid-cols-4 lg:px-20 px-10">
-          {/* lg spacer left */}
-          <div className="hidden lg:block" />
-
-          {lastRow.map((item, i) => (
-            <div
-              key={item.num}
-              className="flex flex-col items-center justify-center gap-4 py-10 px-4 relative cursor-pointer hover:font-bold"
-              style={{ minHeight: "180px" }}
-            >
-              <span
-                className="absolute left-0 right-0 top-0 h-px"
-                style={{
-                  backgroundImage:
-                    "repeating-linear-gradient(to right, #CCCCCC 0, #CCCCCC 6px, transparent 6px, transparent 12px)",
-                }}
-              />
-              {/* Right border: only between 09 and 10 */}
-              {i === 0 && (
-                <span
-                  className="absolute right-0 top-0 bottom-0 w-px"
-                  style={{
-                    backgroundImage:
-                      "repeating-linear-gradient(to bottom, #CCCCCC 0, #CCCCCC 6px, transparent 6px, transparent 12px)",
-                  }}
-                />
-              )}
-
-              <div
-                className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
-                style={{ backgroundColor: "#143D2B" }}
-              >
-                <Image
-                  src={`/${item.num}.png`}
-                  alt={item.num}
-                  width={28}
-                  height={28}
-                  className="object-contain"
-                />
-              </div>
-              <p
-                className="basker text-center whitespace-pre-line"
-                style={{
-                  fontSize: "clamp(13px, 1.5vw, 26px)",
-                  lineHeight: "95%",
-                  letterSpacing: "-0.04em",
-                  color: "#000000",
-                }}
-              >
-                {item.label}
-              </p>
-            </div>
-          ))}
-
-          {/* lg spacer right */}
-          <div className="hidden lg:block" />
-        </div>
+            {/* lg spacer right */}
+            <div className="hidden lg:block" />
+          </div>
         </FadeIn>
       </section>
       <section className="w-full">
@@ -1379,16 +1402,16 @@ export default function Home() {
           <div className="relative z-10 flex flex-col justify-between h-full min-h-[400px] md:min-h-[520px] p-6 md:p-8">
             {/* Top: Latest Videos label */}
             <FadeIn delay={0}>
-            <p
-              className="dmsans text-white"
-              style={{
-                fontSize: "clamp(16px, 2vw, 32px)",
-                lineHeight: "124%",
-                letterSpacing: "-0.04em",
-              }}
-            >
-              Latest Videos
-            </p>
+              <p
+                className="dmsans text-white"
+                style={{
+                  fontSize: "clamp(16px, 2vw, 32px)",
+                  lineHeight: "124%",
+                  letterSpacing: "-0.04em",
+                }}
+              >
+                Latest Videos
+              </p>
             </FadeIn>
 
             {/* Center: Play/Pause button */}
@@ -1430,46 +1453,46 @@ export default function Home() {
 
             {/* Bottom: Title + Thumbnails */}
             <FadeIn delay={200}>
-            <div className="flex items-end justify-between gap-4">
-              {/* Video title */}
-              <h2
-                className="basker text-white"
-                style={{
-                  fontSize: "clamp(28px, 5vw, 64px)",
-                  lineHeight: "95%",
-                  letterSpacing: "-0.04em",
-                  maxWidth: "60%",
-                }}
-              >
-                {activeVideo.title}
-              </h2>
+              <div className="flex items-end justify-between gap-4">
+                {/* Video title */}
+                <h2
+                  className="basker text-white"
+                  style={{
+                    fontSize: "clamp(28px, 5vw, 64px)",
+                    lineHeight: "95%",
+                    letterSpacing: "-0.04em",
+                    maxWidth: "60%",
+                  }}
+                >
+                  {activeVideo.title}
+                </h2>
 
-              {/* Thumbnails */}
-              <div className="flex items-center gap-2 flex-shrink-0">
-                {thumbnails.map((video) => (
-                  <button
-                    key={video.id}
-                    onClick={() => handleThumbnailClick(video)}
-                    className="relative overflow-hidden transition-transform duration-200 hover:scale-105 active:scale-95 flex-shrink-0 cursor-pointer"
-                    style={{
-                      width: "clamp(56px, 6vw, 88px)",
-                      height: "clamp(40px, 4.5vw, 64px)",
-                      borderRadius: "6px",
-                      border: "2px solid rgba(255,255,255,0.4)",
-                    }}
-                    aria-label={video.title}
-                  >
-                    <Image
-                      src={video.image}
-                      alt={video.title}
-                      fill
-                      className="object-cover"
-                      sizes="88px"
-                    />
-                  </button>
-                ))}
+                {/* Thumbnails */}
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  {thumbnails.map((video) => (
+                    <button
+                      key={video.id}
+                      onClick={() => handleThumbnailClick(video)}
+                      className="relative overflow-hidden transition-transform duration-200 hover:scale-105 active:scale-95 flex-shrink-0 cursor-pointer"
+                      style={{
+                        width: "clamp(56px, 6vw, 88px)",
+                        height: "clamp(40px, 4.5vw, 64px)",
+                        borderRadius: "6px",
+                        border: "2px solid rgba(255,255,255,0.4)",
+                      }}
+                      aria-label={video.title}
+                    >
+                      <Image
+                        src={video.image}
+                        alt={video.title}
+                        fill
+                        className="object-cover"
+                        sizes="88px"
+                      />
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
             </FadeIn>
           </div>
         </div>
@@ -1477,104 +1500,104 @@ export default function Home() {
       <section className="w-full bg-white px-6 md:px-14 py-14 md:py-20">
         {/* ── Heading ── */}
         <FadeIn delay={0}>
-        <div className="text-center mb-10 md:mb-14">
-          <h2
-            className="basker"
-            style={{
-              fontSize: "clamp(36px, 5vw, 64px)",
-              lineHeight: "95%",
-              letterSpacing: "-0.04em",
-              color: "#1E1E1E",
-            }}
-          >
-            News &amp; Updates
-          </h2>
-        </div>
+          <div className="text-center mb-10 md:mb-14">
+            <h2
+              className="basker"
+              style={{
+                fontSize: "clamp(36px, 5vw, 64px)",
+                lineHeight: "95%",
+                letterSpacing: "-0.04em",
+                color: "#1E1E1E",
+              }}
+            >
+              News &amp; Updates
+            </h2>
+          </div>
         </FadeIn>
 
         {/* ── Cards Grid ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {articles.map((article, i) => (
             <FadeIn key={article.id} delay={i * 100}>
-            <div
-              className="flex flex-col cursor-pointer group p-5"
-              style={{
-                border: "1px solid #D9D9D9",
-                borderRadius: "0",
-                boxShadow: "none",
-              }}
-            >
-              {/* Image */}
               <div
-                className="relative w-full overflow-hidden"
-                style={{ aspectRatio: "4/3" }}
+                className="flex flex-col cursor-pointer group p-5"
+                style={{
+                  border: "1px solid #D9D9D9",
+                  borderRadius: "0",
+                  boxShadow: "none",
+                }}
               >
-                <Image
-                  src={article.image}
-                  alt={article.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-              </div>
-
-              {/* Text */}
-              <div className="flex flex-col gap-2 px-4 pt-4 pb-4">
-                <h3
-                  className="basker"
-                  style={{
-                    fontSize: "clamp(16px, 1.8vw, 24px)",
-                    lineHeight: "95%",
-                    letterSpacing: "-0.04em",
-                    color: "#1E1E1E",
-                  }}
+                {/* Image */}
+                <div
+                  className="relative w-full overflow-hidden"
+                  style={{ aspectRatio: "4/3" }}
                 >
-                  {article.title}
-                </h3>
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </div>
 
-                {/* Date + Arrow */}
-                <div className="flex items-center justify-between mt-1">
-                  <p
-                    className="dmsans"
+                {/* Text */}
+                <div className="flex flex-col gap-2 px-4 pt-4 pb-4">
+                  <h3
+                    className="basker"
                     style={{
-                      fontSize: "clamp(12px, 1.1vw, 16px)",
-                      lineHeight: "124%",
+                      fontSize: "clamp(16px, 1.8vw, 24px)",
+                      lineHeight: "95%",
                       letterSpacing: "-0.04em",
                       color: "#1E1E1E",
                     }}
                   >
-                    {article.date}
-                  </p>
-                  <Image
-                    src="/black-right-arrow.png"
-                    alt="Read more"
-                    width={20}
-                    height={20}
-                    className="object-contain"
-                  />
+                    {article.title}
+                  </h3>
+
+                  {/* Date + Arrow */}
+                  <div className="flex items-center justify-between mt-1">
+                    <p
+                      className="dmsans"
+                      style={{
+                        fontSize: "clamp(12px, 1.1vw, 16px)",
+                        lineHeight: "124%",
+                        letterSpacing: "-0.04em",
+                        color: "#1E1E1E",
+                      }}
+                    >
+                      {article.date}
+                    </p>
+                    <Image
+                      src="/black-right-arrow.png"
+                      alt="Read more"
+                      width={20}
+                      height={20}
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
             </FadeIn>
           ))}
         </div>
 
         {/* ── View More Button ── */}
         <FadeIn delay={300}>
-        <div className="flex justify-center mt-10 md:mt-14">
-          <Link
-            href="/news-updates"
-            className="dmsans px-8 py-3 border border-black transition-colors text-black duration-200 hover:bg-[#143D2B] hover:text-white"
-            style={{
-              fontSize: "clamp(14px, 1.3vw, 20px)",
-              lineHeight: "95%",
-              letterSpacing: "-0.04em",
-              borderRadius: "125px",
-            }}
-          >
-            View more
-          </Link>
-        </div>
+          <div className="flex justify-center mt-10 md:mt-14">
+            <Link
+              href="/news-updates"
+              className="dmsans px-8 py-3 border border-black transition-colors text-black duration-200 hover:bg-[#143D2B] hover:text-white"
+              style={{
+                fontSize: "clamp(14px, 1.3vw, 20px)",
+                lineHeight: "95%",
+                letterSpacing: "-0.04em",
+                borderRadius: "125px",
+              }}
+            >
+              View more
+            </Link>
+          </div>
         </FadeIn>
       </section>
     </>

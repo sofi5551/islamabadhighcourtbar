@@ -69,6 +69,11 @@ export default function Layout({ children }) {
   return (
     <div
       className={`${isPrivacyPolicy || isNewsUpdates ? "bg-[#C9C9C9]" : ""}`}
+      style={{
+        maxWidth: "1351px",
+        margin: "0 auto", // centers horizontally
+        width: "100%", // ensures it stretches up to maxWidth
+      }}
     >
       <div className={`min-h-screen flex flex-col mx-3 py-3`}>
         {/* ─── NAVBAR ─── */}
