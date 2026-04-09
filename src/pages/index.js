@@ -1325,6 +1325,7 @@ export default function Home() {
                 className="flex flex-col items-center justify-center gap-4 py-10 px-4 relative cursor-pointer hover:font-bold"
                 style={{ minHeight: "180px" }}
               >
+                {/* Top dashed border */}
                 <span
                   className="absolute left-0 right-0 top-0 h-px"
                   style={{
@@ -1332,17 +1333,30 @@ export default function Home() {
                       "repeating-linear-gradient(to right, #CCCCCC 0, #CCCCCC 6px, transparent 6px, transparent 12px)",
                   }}
                 />
-                {/* Right border: only between 09 and 10 */}
-                {i === 0 && (
-                  <span
-                    className="absolute right-0 top-0 bottom-0 w-px"
-                    style={{
-                      backgroundImage:
-                        "repeating-linear-gradient(to bottom, #CCCCCC 0, #CCCCCC 6px, transparent 6px, transparent 12px)",
-                    }}
-                  />
-                )}
 
+                {/* Left dashed border */}
+                <span
+                  className={`absolute top-0 bottom-0 left-0 w-px ${
+                    i === 0 ? "hidden lg:block" : ""
+                  }`}
+                  style={{
+                    backgroundImage:
+                      "repeating-linear-gradient(to bottom, #CCCCCC 0, #CCCCCC 6px, transparent 6px, transparent 12px)",
+                  }}
+                />
+
+                {/* Right dashed border */}
+                <span
+                  className={`absolute top-0 bottom-0 right-0 w-px ${
+                    i === lastRow.length - 1 ? "hidden lg:block" : ""
+                  }`}
+                  style={{
+                    backgroundImage:
+                      "repeating-linear-gradient(to bottom, #CCCCCC 0, #CCCCCC 6px, transparent 6px, transparent 12px)",
+                  }}
+                />
+
+                {/* Circle + Image */}
                 <div
                   className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
                   style={{ backgroundColor: "#143D2B" }}
@@ -1355,6 +1369,7 @@ export default function Home() {
                     className="object-contain"
                   />
                 </div>
+
                 <p
                   className="basker text-center whitespace-pre-line"
                   style={{
