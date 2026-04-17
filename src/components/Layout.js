@@ -78,7 +78,14 @@ export default function Layout({ children }) {
       <div className={`min-h-screen flex flex-col mx-3 py-3`}>
         {/* ─── NAVBAR ─── */}
         <header className="fixed top-0 left-0 right-0 z-50 px-10 md:px-20 pt-7">
-          <nav className="bg-white rounded-full px-4 py-2 flex items-center justify-between shadow-md">
+          <nav
+            className="bg-white rounded-full px-4 py-2 flex items-center justify-between shadow-md"
+            style={{
+              maxWidth: "1191px",
+              margin: "0 auto", // centers horizontally
+              width: "100%", // ensures it stretches up to maxWidth
+            }}
+          >
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 flex-shrink-0">
               <Image
@@ -269,6 +276,8 @@ export default function Layout({ children }) {
                     <li key={link.label}>
                       <Link
                         href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-white hover:opacity-70 transition-opacity"
                       >
                         {link.label}
