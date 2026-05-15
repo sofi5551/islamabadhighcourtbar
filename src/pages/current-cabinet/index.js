@@ -24,11 +24,11 @@ const bearers = [
     slug: "Imran-Ishfaq",
   },
   {
-    name: "MR. MANZOOR AHMED JAJJA",
+    name: "Barr. Qasim Nawaz Abbasi",
     designation: "Advocate",
     post: "Additional Secretary",
-    image: "/office-bearer-4.png",
-    slug: "Manzoor-Ahmed",
+    image: "/office-bearer-4.jpg",
+    slug: "Qasim-Nawaz-Abbasi",
   },
   {
     name: "MS. BUSHRA TARIQ RAJA",

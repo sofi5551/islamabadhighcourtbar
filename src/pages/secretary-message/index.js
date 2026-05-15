@@ -29,17 +29,16 @@ function FadeIn({ children, delay = 0, className = "" }) {
 const bearer = {
   pageTitle: "Secretary Message",
   bannerImage: "/secretary-message.png",
-  personImage: "/home3.png",
-  name: "Mr. Manzoor Ahmed\nJajja Advocate",
+  personImage: "/office-bearer-4.jpg",
+  name: "Barr. Qasim Nawaz\Abbasi Advocate",
   role: "SECRETARY FOR",
   tag: "Secretary Message",
   paragraphs: [
-    "It is with great pleasure and a deep sense of gratitude that I, Manzoor Ahmed Jajja, Advocate High Court, accept the honor of serving as your President. I am humbled by the trust you have placed in me, and I pledge to work tirelessly to uphold the values and principles that our association stands for.",
-    "As we embark on this new journey together, I am keenly aware of the challenges that lie ahead. We live in a time of great uncertainty and upheaval, where the rule of law and the independence of the judiciary are under constant threat. It is up to us, as lawyers and legal professionals, to safeguard these fundamental principles and to ensure that justice is accessible to all.",
-    "In the coming days and months, I will work closely with all of you to chart a course for our association that reflects the needs and aspirations of our members. I will listen to your concerns and ideas, and I will do my best to incorporate them into our plans and initiatives.",
-    "I believe that our association has the potential to be a powerful force for positive change, not just within the legal community, but in society as a whole. Together, we can make a real difference in the lives of our fellow citizens, by standing up for justice, fairness, and the rule of law.",
-    "Once again, thank you for entrusting me with this responsibility. I look forward to working with each and every one of you to build a brighter future for our association and our country. For Lawyers, Bar Association is like a mother and plays a parental role. Every year, Bar Association give mandate to our colleagues to serve it with their best efforts.",
-    "Sincerely,",
+    "At a time when the supremacy of the Constitution, independence of the judiciary, and rule of law remain fundamental to the strength of our democracy, the Islamabad High Court Bar Association stands resolute in its commitment to safeguarding justice, constitutional values, and the dignity of the legal profession.",
+    "As Secretary of the Islamabad High Court Bar Association, I firmly believe that the legal fraternity carries not only the responsibility of advocacy but also the duty to defend democratic institutions, protect fundamental rights, and ensure equal access to justice for every citizen.",
+    "Our Association will continue to serve as a united and independent voice for lawyers, promote professional excellence, uphold the highest ethical standards, and work tirelessly for the welfare and empowerment of the Bar.",
+    "We remain committed to fostering unity within the legal community and strengthening public confidence in the justice system through integrity, courage, and principled leadership.",
+    "Together, we will continue to uphold the honour of the profession and contribute meaningfully toward a just, democratic, and progressive Pakistan.",
   ],
 };
 

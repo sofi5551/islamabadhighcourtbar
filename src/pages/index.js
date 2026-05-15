@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+import newsData from "@/data/newsData";
 
 function FadeIn({ children, delay = 0, className = "" }) {
   const ref = useRef(null);
@@ -80,8 +81,8 @@ function SpinIn({ children, delay = 0, className = "" }) {
 const FULL_WORD = "Association";
 const bearers = [
   {
-    name: "MR. SYED WAJID ALI SHAH",
-    designation: "Gillani Advocate",
+    name: "MR. SYED WAJID ALI SHAH Gillani",
+    designation: "Advocate",
     post: "Vice President",
     image: "/office-bearer-1.png",
     slug: "Syed-Wajid-Ali-Shah",
@@ -101,11 +102,11 @@ const bearers = [
     slug: "Imran-Ishfaq",
   },
   {
-    name: "MR. MANZOOR AHMED JAJJA",
+    name: "Barr. Qasim Nawaz Abbasi",
     designation: "Advocate",
     post: "Additional Secretary",
-    image: "/office-bearer-4.png",
-    slug: "Manzoor-Ahmed",
+    image: "/office-bearer-4.jpg",
+    slug: "Qasim-Nawaz-Abbasi",
   },
   {
     name: "MS. BUSHRA TARIQ RAJA",
@@ -231,26 +232,7 @@ const videos = [
   { id: 3, title: "Video Title 3", image: "/home8.png" },
   { id: 4, title: "Video Title 4", image: "/home9.png" },
 ];
-const articles = [
-  {
-    id: 1,
-    image: "/home10.png",
-    title: "MAJOR AMENDMENTS",
-    date: "23 April, 2025",
-  },
-  {
-    id: 2,
-    image: "/home11.png",
-    title: "MAJOR AMENDMENTS",
-    date: "23 April, 2025",
-  },
-  {
-    id: 3,
-    image: "/home12.png",
-    title: "MAJOR AMENDMENTS",
-    date: "23 April, 2025",
-  },
-];
+const articles = newsData.slice(0, 3);
 export default function Home() {
   const [typed, setTyped] = useState("");
 
@@ -266,20 +248,20 @@ export default function Home() {
   }, []);
   const facilities = [
     { label: "LIBRARY", icon: "/librabry-logo.png" },
-    { label: "ONLINE LAW\nLIBRARY", icon: "/law-lib-logo.png" },
+    // { label: "ONLINE LAW\nLIBRARY", icon: "/law-lib-logo.png" },
     { label: "CAFETERIA", icon: "/cafeteria-logo.png" },
     { label: "SPORTS", icon: "/sports-logo.png" },
     { label: "TRANSPORTATION", icon: "/transportation-logo.png" },
-    { label: "DIAGNOSTIC\nCENTRE", icon: "/diagnostic-center-logo.png" },
-    { label: "DENTAL\nCLINIC", icon: "/dental-clinic-logo.png" },
-    {
-      label: "HOMEOPATHIC\nCLINIC",
-      icon: null, // rendered separately with two overlapping icons
-    },
+    // { label: "DIAGNOSTIC\nCENTRE", icon: "/diagnostic-center-logo.png" },
+    // { label: "DENTAL\nCLINIC", icon: "/dental-clinic-logo.png" },
+    // {
+    //   label: "HOMEOPATHIC\nCLINIC",
+    //   icon: null, // rendered separately with two overlapping icons
+    // },
     { label: "FREE LEGAL AID\nFOR PUBLIC", icon: "/legal-aid-logo.png" },
-    { label: "PASSPORT\nOFFICE", icon: "/passport-logo.png" },
-    { label: "NADRA\nOFFICE", icon: "/nadra-logo.png" },
-    { label: "POLICE\nMARKAZ", icon: "/police-logo.png" },
+    { label: "POST OFFICE", icon: "/passport-logo.png" },
+    { label: "NADRA OFFICE\nComing Soon", icon: "/nadra-logo.png" },
+    // { label: "POLICE\nMARKAZ", icon: "/police-logo.png" },
   ];
   const [startIndex, setStartIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(4);
@@ -470,6 +452,38 @@ export default function Home() {
                   </button>
 
                   <button
+                    className="dmsans px-5 py-3 rounded-full border border-white text-white cursor-pointer transition-all duration-200 hover:bg-white hover:text-green-900 hover:border-green-900 hover:scale-105 group"
+                    style={{
+                      fontSize: "14px",
+                      backdropFilter: "blur(6px)",
+                      backgroundColor: "rgba(255,255,255,0.08)",
+                    }}
+                  >
+                    <Link
+                      href="/search-lawyers"
+                      className="flex items-center gap-2"
+                    >
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="transition-colors duration-200 flex-shrink-0"
+                      >
+                        <rect x="2" y="7" width="20" height="14" rx="2" />
+                        <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                        <line x1="12" y1="12" x2="12" y2="16" />
+                        <line x1="10" y1="14" x2="14" y2="14" />
+                      </svg>
+                      <span>Clerk&apos;s Search</span>
+                    </Link>
+                  </button>
+
+                  <button
                     className="dmsans flex items-center gap-2 px-5 py-3 rounded-full border border-white text-white cursor-pointer transition-all duration-200 hover:bg-white hover:text-green-900 hover:border-green-900 hover:scale-105 group"
                     style={{
                       fontSize: "14px",
@@ -624,7 +638,7 @@ export default function Home() {
             {/* Image */}
             <div className="relative w-full lg:flex-1 rounded-lg overflow-hidden">
               <Image
-                src="/home3.png"
+                src="/office-bearer-4.jpg"
                 alt="Secretary"
                 width={604}
                 height={654}
@@ -672,9 +686,9 @@ export default function Home() {
                   color: "#1E1E1E",
                 }}
               >
-                Mr. Manzoor Ahmed
+                Barr. Qasim Nawaz
                 <br />
-                Jajja Advocate
+                Abbasi Advocate
               </h2>
 
               <p
@@ -700,20 +714,35 @@ export default function Home() {
                 }}
               >
                 <p>
-                  It is with great pleasure and a deep sense of gratitude that
-                  I, Manzoor Ahmed Jajja, Advocate High Court, accept the honor
-                  of serving as your President. I am humbled by the trust you
-                  have placed in me, and I pledge to work tirelessly to uphold
-                  the values and principles that our association stands for.
+                  At a time when the supremacy of the Constitution, independence
+                  of the judiciary, and rule of law remain fundamental to the
+                  strength of our democracy, the Islamabad High Court Bar
+                  Association stands resolute in its commitment to safeguarding
+                  justice, constitutional values, and the dignity of the legal
+                  profession.
                 </p>
                 <p>
-                  As we embark on this new journey together, I am keenly aware
-                  of the challenges that lie ahead. We live in a time of great
-                  uncertainty and upheaval, where the rule of law and the
-                  independence of the judiciary are under constant threat. It is
-                  up to us, as lawyers and legal professionals, to safeguard
-                  these fundamental principles and to ensure that justice is
-                  accessible to all.
+                  As Secretary of the Islamabad High Court Bar Association, I
+                  firmly believe that the legal fraternity carries not only the
+                  responsibility of advocacy but also the duty to defend
+                  democratic institutions, protect fundamental rights, and
+                  ensure equal access to justice for every citizen.
+                </p>
+                <p>
+                  Our Association will continue to serve as a united and
+                  independent voice for lawyers, promote professional
+                  excellence, uphold the highest ethical standards, and work
+                  tirelessly for the welfare and empowerment of the Bar.
+                </p>
+                <p>
+                  We remain committed to fostering unity within the legal
+                  community and strengthening public confidence in the justice
+                  system through integrity, courage, and principled leadership.
+                </p>
+                <p>
+                  Together, we will continue to uphold the honour of the
+                  profession and contribute meaningfully toward a just,
+                  democratic, and progressive Pakistan.
                 </p>
               </div>
             </div>
@@ -960,9 +989,9 @@ export default function Home() {
           </FadeIn>
 
           {/* ── Grid of Facilities ── */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:px-30">
+          <div className="flex flex-wrap justify-center gap-3 md:px-30">
             {facilities.map((facility, index) => (
-              <FadeIn key={index} delay={index * 80}>
+              <FadeIn key={index} delay={index * 80} className="w-[calc(50%-6px)] sm:w-[calc(33.333%-8px)]">
                 <div
                   className="bg-white flex flex-col items-center justify-center gap-3 py-8 px-4 transition-all duration-300 hover:scale-105"
                   style={{ borderRadius: "11px", height: "148.84px" }}
@@ -1534,12 +1563,14 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {articles.map((article, i) => (
             <FadeIn key={article.id} delay={i * 100}>
-              <div
-                className="flex flex-col cursor-pointer group p-5"
+              <Link
+                href={`/news-updates/${article.slug}`}
+                className="flex flex-col group p-5"
                 style={{
                   border: "1px solid #D9D9D9",
                   borderRadius: "0",
                   boxShadow: "none",
+                  textDecoration: "none",
                 }}
               >
                 {/* Image */}
@@ -1592,7 +1623,7 @@ export default function Home() {
                     />
                   </div>
                 </div>
-              </div>
+              </Link>
             </FadeIn>
           ))}
         </div>

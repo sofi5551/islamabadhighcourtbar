@@ -2,6 +2,10 @@ import "@/styles/globals.css";
 import Layout from "@/components/Layout";
 import ComingSoon from "@/components/ComingSoon";
 import { Baskervville, DM_Sans } from "next/font/google";
+import { useState, createContext } from "react";
+import { useRouter } from "next/router";
+
+export const SiteContext = createContext({ setShowComingSoon: () => {} });
 
 const baskervville = Baskervville({
   subsets: ["latin"],
@@ -15,18 +19,24 @@ const dmSans = DM_Sans({
   variable: "--font-dm-sans",
 });
 
-const showComingSoon = true;
-
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
+  const [showComingSoon, setShowComingSoon] = useState(true);
+  const isAdmin = router.pathname === "/admin";
+
   return (
-    <main className={`${baskervville.variable} ${dmSans.variable}`}>
-      {showComingSoon ? (
-        <ComingSoon />
-      ) : (
-        <Layout>
+    <SiteContext.Provider value={{ setShowComingSoon }}>
+      <main className={`${baskervville.variable} ${dmSans.variable}`}>
+        {showComingSoon && !isAdmin ? (
+          <ComingSoon />
+        ) : isAdmin ? (
           <Component {...pageProps} />
-        </Layout>
-      )}
-    </main>
+        ) : (
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        )}
+      </main>
+    </SiteContext.Provider>
   );
 }

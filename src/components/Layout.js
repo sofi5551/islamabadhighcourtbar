@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -7,7 +7,6 @@ export default function Layout({ children }) {
   const router = useRouter();
 
   const isPrivacyPolicy = router.pathname === "/privacy-policy";
-  const isNewsUpdates = router.pathname === "/news-updates";
   const navLinks = [
     {
       label: "About",
@@ -42,8 +41,7 @@ export default function Layout({ children }) {
       ],
     },
     { label: "Search Lawyers", href: "/search-lawyers" },
-    { label: "Gallery", href: "/photo-gallery" },
-    { label: "Blogs", href: "/blogs" },
+    { label: "News & Updates", href: "/news-updates" },
     { label: "Contact", href: "/contact-us" },
   ];
 
@@ -59,16 +57,16 @@ export default function Layout({ children }) {
   ];
 
   const latestNews = [
-    { label: "News 1", href: "#" },
-    { label: "News 12", href: "#" },
-    { label: "News 14", href: "#" },
-    { label: "News 13", href: "#" },
-    { label: "News 14", href: "#" },
+    { label: "Directory Form", href: "/news-updates/directory-form" },
+    { label: "Notice For Directory", href: "/news-updates/notice-for-directory" },
+    { label: "Annual Dues IHCBA", href: "/news-updates/annual-dues-ihcba" },
+    { label: "Cabinet IHCBA", href: "/news-updates/cabinet-ihcba" },
+    { label: "Final Notice Dues", href: "/news-updates/final-notice-dues" },
   ];
 
   return (
     <div
-      className={`${isPrivacyPolicy || isNewsUpdates ? "bg-[#C9C9C9]" : ""}`}
+      className={`${isPrivacyPolicy ? "bg-[#C9C9C9]" : ""}`}
       style={{
         maxWidth: "1351px",
         margin: "0 auto", // centers horizontally
@@ -107,9 +105,26 @@ export default function Layout({ children }) {
                 <li key={link.label} className="relative group">
                   <Link
                     href={link.href}
-                    className="dmsans16 text-black hover:text-green-700 transition-colors duration-200 whitespace-nowrap"
+                    className="dmsans16 text-black hover:text-green-700 transition-colors duration-200 whitespace-nowrap flex items-center gap-1"
                   >
                     {link.label}
+                    {link.dropdown && (
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        className="transition-transform duration-200 group-hover:rotate-180"
+                      >
+                        <path
+                          d="M2 4L6 8L10 4"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    )}
                   </Link>
 
                   {/* Dropdown */}
