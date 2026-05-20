@@ -79,6 +79,38 @@ const newsData = [
   },
   {
     id: 7,
+    slug: "construction-project-update",
+    image: "/blog1.png",
+    title: "Construction Project Completion by July 31, 2025",
+    date: "Dated 29th April, 2025",
+    body: [
+      "The contractor assured that the ongoing project, including the Library, Bar Office, Bar Room, President Office, Secretary Office, Committee Room, and Parking will be completed by July 31, 2025.",
+      "The association has been closely monitoring the progress and all stakeholders have been informed of the timeline. Members are encouraged to remain patient as the facilities are brought to completion.",
+    ],
+  },
+  {
+    id: 8,
+    slug: "mobahisa",
+    image: "/blog1.png",
+    title: "Mobahisa",
+    date: "Dated 29th April, 2025",
+    body: [
+      "A debate competition on resolution topic \"صاف کتاب\" was held at the Islamabad High Court Bar Association premises.",
+      "The event saw enthusiastic participation from members and young advocates. The competition aimed to encourage critical thinking and public speaking skills among the legal fraternity.",
+    ],
+  },
+  {
+    id: 9,
+    slug: "front-page",
+    image: "/blog1.png",
+    title: "Front Page",
+    date: "Dated 29th April, 2025",
+    body: [
+      "Front Page news coverage of the Islamabad High Court Bar Association's latest activities.",
+    ],
+  },
+  {
+    id: 10,
     slug: "meeting-with-registrar-ihc",
     image: "/news-updates.png",
     title: "Meeting With Registrar Islamabad High Court",
@@ -91,7 +123,7 @@ const newsData = [
     ],
   },
   {
-    id: 8,
+    id: 11,
     slug: "cabinet-ihcba",
     image: "/news-updates.png",
     title: "Cabinet IHCBA",
@@ -104,7 +136,7 @@ const newsData = [
     ],
   },
   {
-    id: 9,
+    id: 12,
     slug: "final-notice-dues",
     image: "/news-updates.png",
     title: "Final Notice Dues",

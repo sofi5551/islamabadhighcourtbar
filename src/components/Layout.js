@@ -14,6 +14,7 @@ export default function Layout({ children }) {
       dropdown: [
         { label: "President Message", href: "/president-message" },
         { label: "Secretary Message", href: "/secretary-message" },
+        { label: "Administrative Officer Message", href: "/administrative-officer-message" },
         {
           label: "Important Links",
           href: "/important-links",
