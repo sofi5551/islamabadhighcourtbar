@@ -28,16 +28,12 @@ export default function Layout({ children }) {
       label: "Office Bearers",
       href: "#",
       dropdown: [
+        { label: "Former Presidents", href: "/former-presidents" },
+        { label: "Former Secretaries", href: "/former-secretaries" },
         { label: "Current Cabinet", href: "/current-cabinet" },
         { label: "Former Cabinet", href: "/former-cabinet" },
-        {
-          label: "Current Committees",
-          href: "/current-committees",
-        },
-        {
-          label: "Current Administration",
-          href: "/current-administration",
-        },
+        { label: "Current Committees", href: "/current-committees" },
+        { label: "Current Administration", href: "/current-administration" },
       ],
     },
     { label: "Search Lawyers", href: "/search-lawyers" },
