@@ -21,7 +21,7 @@ const dmSans = DM_Sans({
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
-  const [showComingSoon, setShowComingSoon] = useState(true);
+  const [showComingSoon, setShowComingSoon] = useState(false);
   const isAdmin = router.pathname === "/admin";
 
   return (

@@ -14,15 +14,18 @@ export default function Layout({ children }) {
       dropdown: [
         { label: "President Message", href: "/president-message" },
         { label: "Secretary Message", href: "/secretary-message" },
-        { label: "Administrative Officer Message", href: "/administrative-officer-message" },
         {
-          label: "Important Links",
-          href: "/important-links",
+          label: "Administrative Officer Message",
+          href: "/administrative-officer-message",
         },
-        {
-          label: "Privacy Policy",
-          href: "/privacy-policy",
-        },
+        // {
+        //   label: "Important Links",
+        //   href: "/important-links",
+        // },
+        // {
+        //   label: "Privacy Policy",
+        //   href: "/privacy-policy",
+        // },
       ],
     },
     {
@@ -33,7 +36,7 @@ export default function Layout({ children }) {
         { label: "Former Secretaries", href: "/former-secretaries" },
         { label: "Current Cabinet", href: "/current-cabinet" },
         { label: "Former Cabinet", href: "/former-cabinet" },
-        { label: "Current Committees", href: "/current-committees" },
+        // { label: "Current Committees", href: "/current-committees" },
         { label: "Current Administration", href: "/current-administration" },
       ],
     },
@@ -55,7 +58,10 @@ export default function Layout({ children }) {
 
   const latestNews = [
     { label: "Directory Form", href: "/news-updates/directory-form" },
-    { label: "Notice For Directory", href: "/news-updates/notice-for-directory" },
+    {
+      label: "Notice For Directory",
+      href: "/news-updates/notice-for-directory",
+    },
     { label: "Annual Dues IHCBA", href: "/news-updates/annual-dues-ihcba" },
     { label: "Cabinet IHCBA", href: "/news-updates/cabinet-ihcba" },
     { label: "Final Notice Dues", href: "/news-updates/final-notice-dues" },
