@@ -304,7 +304,7 @@ export default function Home() {
         >
           {/* Background Image */}
           <Image
-            src="/home1.png"
+            src="/home-1.png"
             alt="Hero Background"
             fill
             priority

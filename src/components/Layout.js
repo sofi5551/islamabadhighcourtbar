@@ -71,25 +71,101 @@ export default function Layout({ children }) {
       label: "Download Forms",
       href: "#",
       dropdown: [
-        { label: "Asset Declaration Proforma", href: "/download forms/Performa_of_Assets_Form________________638234630653033343.pdf", download: true },
-        { label: "Proforma of Particulars (Person Details)", href: "/download forms/Particulars Proforma638016908142565528.pdf", download: true },
-        { label: "Lawyer's Registration Form", href: "/download forms/Lawyer_Registration_Form_635841410078291888.doc", download: true },
-        { label: "Talbana", href: "/download forms/Fard_Talbana______________637467664639550059.pdf", download: true },
-        { label: "Proforma for E-Court Facility", href: "/download forms/Proforma_for_E-Court_Facility________________.pdf", download: true },
-        { label: "Opening Sheet for Civil Appeals / Revisions", href: "/download forms/Opening_Sheet_for_Civil_Appeals_________________637402670721907442.pdf", download: true },
-        { label: "Opening Sheet For Criminal Appeals / Revision Cs.", href: "/download forms/Opening_Sheet_for_Criminal_Appeals______________637402685946442183.pdf", download: true },
-        { label: "Template of Power of Attorney (Wakalatname)", href: "/download forms/WAKALATNAME_Format_Urdu_________________637539126779316585.pdf", download: true },
-        { label: "Urgent Proforma", href: "/download forms/Urgent_Form636907575590538498.pdf", download: true },
-        { label: "Institution Proforma", href: "/download forms/Instituon_Performa636907599321924180.pdf", download: true },
-        { label: "Record / File Inspection Form", href: "/download forms/Inspect_Record_Performa636336485735613457.pdf", download: true },
-        { label: "Two Surety Bond", href: "/download forms/Dual Surety Bond636257826215835552.doc", download: true },
-        { label: "One Surety Bond", href: "/download forms/Single Surety Bond636257825022433456.doc", download: true },
-        { label: "Personal Surety Bond", href: "/download forms/Personal Bond636257823302686436.doc", download: true },
-        { label: "Defense Counsel Fee Form", href: "/download forms/Advocates fee bill636257828336971278.docx", download: true },
-        { label: "Complaint Form", href: "/download forms/ComplainForm636194770479478077.pdf", download: true },
-        { label: "Application Form For Grant Of Fitness Certificate", href: "/download forms/Fitness Certificate635979578518035797.docx", download: true },
-        { label: "Copy Petition Form", href: "/download forms/Copy_Petition_Proforma_Sample_______.pdf", download: true },
-        { label: "Application of Cases List for Lawyers", href: "/download forms/Application_for_cases_list_.pdf", download: true },
+        {
+          label: "Asset Declaration Proforma",
+          href: "/download forms/Performa_of_Assets_Form________________638234630653033343.pdf",
+          download: true,
+        },
+        {
+          label: "Proforma of Particulars (Person Details)",
+          href: "/download forms/Particulars Proforma638016908142565528.pdf",
+          download: true,
+        },
+        {
+          label: "Lawyer's Registration Form",
+          href: "/download forms/Lawyer_Registration_Form_635841410078291888.doc",
+          download: true,
+        },
+        {
+          label: "Talbana",
+          href: "/download forms/Fard_Talbana______________637467664639550059.pdf",
+          download: true,
+        },
+        {
+          label: "Proforma for E-Court Facility",
+          href: "/download forms/Proforma_for_E-Court_Facility________________.pdf",
+          download: true,
+        },
+        {
+          label: "Opening Sheet for Civil Appeals / Revisions",
+          href: "/download forms/Opening_Sheet_for_Civil_Appeals_________________637402670721907442.pdf",
+          download: true,
+        },
+        {
+          label: "Opening Sheet For Criminal Appeals / Revision Cs.",
+          href: "/download forms/Opening_Sheet_for_Criminal_Appeals______________637402685946442183.pdf",
+          download: true,
+        },
+        {
+          label: "Template of Power of Attorney (Wakalatname)",
+          href: "/download forms/WAKALATNAME_Format_Urdu_________________637539126779316585.pdf",
+          download: true,
+        },
+        {
+          label: "Urgent Proforma",
+          href: "/download forms/Urgent_Form636907575590538498.pdf",
+          download: true,
+        },
+        {
+          label: "Institution Proforma",
+          href: "/download forms/Instituon_Performa636907599321924180.pdf",
+          download: true,
+        },
+        {
+          label: "Record / File Inspection Form",
+          href: "/download forms/Inspect_Record_Performa636336485735613457.pdf",
+          download: true,
+        },
+        {
+          label: "Two Surety Bond",
+          href: "/download forms/Dual Surety Bond636257826215835552.doc",
+          download: true,
+        },
+        {
+          label: "One Surety Bond",
+          href: "/download forms/Single Surety Bond636257825022433456.doc",
+          download: true,
+        },
+        {
+          label: "Personal Surety Bond",
+          href: "/download forms/Personal Bond636257823302686436.doc",
+          download: true,
+        },
+        {
+          label: "Defense Counsel Fee Form",
+          href: "/download forms/Advocates fee bill636257828336971278.docx",
+          download: true,
+        },
+        {
+          label: "Complaint Form",
+          href: "/download forms/ComplainForm636194770479478077.pdf",
+          download: true,
+        },
+        {
+          label: "Application Form For Grant Of Fitness Certificate",
+          href: "/download forms/Fitness Certificate635979578518035797.docx",
+          download: true,
+        },
+        {
+          label: "Copy Petition Form",
+          href: "/download forms/Copy_Petition_Proforma_Sample_______.pdf",
+          download: true,
+        },
+        {
+          label: "Application of Cases List for Lawyers",
+          href: "/download forms/Application_for_cases_list_.pdf",
+          download: true,
+        },
       ],
     },
     // { label: "Search Lawyers", href: "/search-lawyers" },
@@ -155,12 +231,12 @@ export default function Layout({ children }) {
             </Link>
 
             {/* Desktop Nav Links */}
-            <ul className="hidden md:flex items-center gap-6">
+            <ul className="hidden navbar:flex items-center gap-3">
               {navLinks.map((link) => (
                 <li key={link.label} className="relative group">
                   <Link
                     href={link.href}
-                    className="dmsans16 text-black hover:text-green-700 transition-colors duration-200 whitespace-nowrap flex items-center gap-1"
+                    className="dmsans14 text-black hover:text-green-700 transition-colors duration-200 whitespace-nowrap flex items-center gap-1"
                   >
                     {link.label}
                     {link.dropdown && (
@@ -201,12 +277,14 @@ export default function Layout({ children }) {
                               key={item.label}
                               href={item.href}
                               target={item.newTab ? "_blank" : undefined}
-                              rel={item.newTab ? "noopener noreferrer" : undefined}
+                              rel={
+                                item.newTab ? "noopener noreferrer" : undefined
+                              }
                               className="block px-5 py-2.5 text-sm text-gray-700 hover:text-green-700 hover:bg-gray-50 transition-colors whitespace-nowrap"
                             >
                               {item.label}
                             </Link>
-                          )
+                          ),
                         )}
                       </div>
                     </div>
@@ -218,7 +296,7 @@ export default function Layout({ children }) {
             {/* Right Side: Call icon + text */}
             <a
               href="tel:0519218058"
-              className="hidden md:flex items-center gap-2 hover:opacity-70 transition-opacity"
+              className="hidden navbar:flex items-center gap-2 hover:opacity-70 transition-opacity"
             >
               <Image
                 src="/call-logo.svg"
@@ -239,7 +317,7 @@ export default function Layout({ children }) {
 
             {/* Mobile Hamburger */}
             <button
-              className="md:hidden flex flex-col gap-1.5 p-2 cursor-pointer"
+              className="navbar:hidden flex flex-col gap-1.5 p-2 cursor-pointer"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
             >
@@ -263,7 +341,7 @@ export default function Layout({ children }) {
 
           {/* Mobile Menu Dropdown */}
           <div
-            className={`md:hidden transition-all duration-300 ${
+            className={`navbar:hidden transition-all duration-300 ${
               menuOpen ? "opacity-100" : "max-h-0 opacity-0 overflow-hidden"
             }`}
           >
@@ -293,13 +371,17 @@ export default function Layout({ children }) {
                                 key={item.label}
                                 href={item.href}
                                 target={item.newTab ? "_blank" : undefined}
-                                rel={item.newTab ? "noopener noreferrer" : undefined}
+                                rel={
+                                  item.newTab
+                                    ? "noopener noreferrer"
+                                    : undefined
+                                }
                                 className="text-sm text-gray-500 hover:text-green-700 transition-colors"
                                 onClick={() => setMenuOpen(false)}
                               >
                                 {item.label}
                               </Link>
-                            )
+                            ),
                           )}
                         </div>
                       </div>
