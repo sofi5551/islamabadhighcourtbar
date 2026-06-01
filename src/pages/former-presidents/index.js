@@ -174,7 +174,7 @@ export default function FormerPresidents() {
                       {bearer.post}
                     </p>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(20,61,43,0.85) 0%, rgba(20,61,43,0.1) 50%, transparent 100%)" }} />
                 </div>
               ))}
             </div>
