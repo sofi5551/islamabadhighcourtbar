@@ -390,9 +390,9 @@ export default function Home() {
               </h1>
 
               {/* Subtitle */}
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-end gap-4">
                 {/* Paragraph */}
-                <p
+                {/* <p
                   className="dmsans text-white max-w-md"
                   style={{
                     color: "rgba(255,255,255,0.8)",
@@ -402,7 +402,7 @@ export default function Home() {
                   Switch from aws to dayhoff&apos;s secure life sciences cloud—
                   <br />
                   in just minutes
-                </p>
+                </p> */}
 
                 {/* CTA Buttons */}
                 <div className="flex flex-wrap  self-end gap-3 mt-2 md:mt-0">
