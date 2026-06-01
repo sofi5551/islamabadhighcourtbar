@@ -582,7 +582,7 @@ export default function Home() {
               <div
                 className="dmsans flex flex-col gap-3"
                 style={{
-                  fontSize: "clamp(13px, 1.8vw, 24px)",
+                  fontSize: "clamp(16px, 1.8vw, 24px)",
                   lineHeight: "124%",
                   letterSpacing: "-0.04em",
                   color: "#595959",
@@ -687,7 +687,7 @@ export default function Home() {
               <div
                 className="dmsans flex flex-col gap-3"
                 style={{
-                  fontSize: "clamp(13px, 1.8vw, 24px)",
+                  fontSize: "clamp(16px, 1.8vw, 24px)",
                   lineHeight: "124%",
                   letterSpacing: "-0.04em",
                   color: "#595959",
@@ -755,7 +755,7 @@ export default function Home() {
             <p
               className="dmsans text-white"
               style={{
-                fontSize: "clamp(13px, 1.2vw, 20px)",
+                fontSize: "clamp(16px, 1.2vw, 20px)",
                 lineHeight: "124%",
                 letterSpacing: "-0.04em",
                 opacity: 0.85,
@@ -772,7 +772,7 @@ export default function Home() {
             <p
               className="dmsans text-white"
               style={{
-                fontSize: "clamp(13px, 1.2vw, 20px)",
+                fontSize: "clamp(16px, 1.2vw, 20px)",
                 lineHeight: "124%",
                 letterSpacing: "-0.04em",
                 opacity: 0.85,
@@ -845,7 +845,7 @@ export default function Home() {
                 <p
                   className="dmsans"
                   style={{
-                    fontSize: "clamp(13px, 1.1vw, 20px)",
+                    fontSize: "clamp(14px, 1.1vw, 20px)",
                     lineHeight: "124%",
                     letterSpacing: "-0.04em",
                     color: "#595959",
@@ -868,7 +868,7 @@ export default function Home() {
                 <p
                   className="dmsans"
                   style={{
-                    fontSize: "clamp(13px, 1.1vw, 20px)",
+                    fontSize: "clamp(14px, 1.1vw, 20px)",
                     lineHeight: "124%",
                     letterSpacing: "-0.04em",
                     color: "#595959",
@@ -909,7 +909,7 @@ export default function Home() {
           <p
             className="dmsans"
             style={{
-              fontSize: "clamp(18px, 2.2vw, 32px)",
+              fontSize: "clamp(16px, 2vw, 32px)",
               lineHeight: "124%",
               letterSpacing: "-0.04em",
               color: "#595959",
@@ -1028,7 +1028,8 @@ export default function Home() {
                         key={li}
                         style={{
                           display: "block",
-                          marginTop: li > 0 && line.includes("Coming Soon") ? "8px" : 0,
+                          marginTop:
+                            li > 0 && line.includes("Coming Soon") ? "8px" : 0,
                         }}
                       >
                         {line}

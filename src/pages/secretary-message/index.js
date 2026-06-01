@@ -151,7 +151,7 @@ export default function SecretaryMessage() {
             <div
               className="dmsans flex flex-col gap-3"
               style={{
-                fontSize: "clamp(13px, 1.8vw, 24px)",
+                fontSize: "clamp(16px, 1.8vw, 24px)",
                 lineHeight: "124%",
                 letterSpacing: "-0.04em",
                 color: "#595959",
