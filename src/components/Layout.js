@@ -14,10 +14,7 @@ export default function Layout({ children }) {
       dropdown: [
         { label: "President Message", href: "/president-message" },
         { label: "Secretary Message", href: "/secretary-message" },
-        {
-          label: "Administrative Officer Message",
-          href: "/administrative-officer-message",
-        },
+
         // {
         //   label: "Important Links",
         //   href: "/important-links",
@@ -38,9 +35,64 @@ export default function Layout({ children }) {
         { label: "Former Cabinet", href: "/former-cabinet" },
         // { label: "Current Committees", href: "/current-committees" },
         { label: "Current Administration", href: "/current-administration" },
+        {
+          label: "Administrative Officer",
+          href: "/administrative-officer-message",
+        },
       ],
     },
-    { label: "Search Lawyers", href: "/search-lawyers" },
+    {
+      label: "Case Management",
+      href: "#",
+      dropdown: [
+        {
+          label: "Cause List",
+          href: "https://mis.ihc.gov.pk/frmCausLst",
+          newTab: true,
+        },
+        {
+          label: "Case Status / Case Search",
+          href: "https://mis.ihc.gov.pk/frmCseSrch",
+          newTab: true,
+        },
+        {
+          label: "Objection Cancellation",
+          href: "https://mis.ihc.gov.pk/frmObjctn",
+          newTab: true,
+        },
+        {
+          label: "e-Dairy Tracker",
+          href: "https://mis.ihc.gov.pk/frmDrSrch",
+          newTab: true,
+        },
+      ],
+    },
+    {
+      label: "Download Forms",
+      href: "#",
+      dropdown: [
+        { label: "Asset Declaration Proforma", href: "/download forms/Performa_of_Assets_Form________________638234630653033343.pdf", download: true },
+        { label: "Proforma of Particulars (Person Details)", href: "/download forms/Particulars Proforma638016908142565528.pdf", download: true },
+        { label: "Lawyer's Registration Form", href: "/download forms/Lawyer_Registration_Form_635841410078291888.doc", download: true },
+        { label: "Talbana", href: "/download forms/Fard_Talbana______________637467664639550059.pdf", download: true },
+        { label: "Proforma for E-Court Facility", href: "/download forms/Proforma_for_E-Court_Facility________________.pdf", download: true },
+        { label: "Opening Sheet for Civil Appeals / Revisions", href: "/download forms/Opening_Sheet_for_Civil_Appeals_________________637402670721907442.pdf", download: true },
+        { label: "Opening Sheet For Criminal Appeals / Revision Cs.", href: "/download forms/Opening_Sheet_for_Criminal_Appeals______________637402685946442183.pdf", download: true },
+        { label: "Template of Power of Attorney (Wakalatname)", href: "/download forms/WAKALATNAME_Format_Urdu_________________637539126779316585.pdf", download: true },
+        { label: "Urgent Proforma", href: "/download forms/Urgent_Form636907575590538498.pdf", download: true },
+        { label: "Institution Proforma", href: "/download forms/Instituon_Performa636907599321924180.pdf", download: true },
+        { label: "Record / File Inspection Form", href: "/download forms/Inspect_Record_Performa636336485735613457.pdf", download: true },
+        { label: "Two Surety Bond", href: "/download forms/Dual Surety Bond636257826215835552.doc", download: true },
+        { label: "One Surety Bond", href: "/download forms/Single Surety Bond636257825022433456.doc", download: true },
+        { label: "Personal Surety Bond", href: "/download forms/Personal Bond636257823302686436.doc", download: true },
+        { label: "Defense Counsel Fee Form", href: "/download forms/Advocates fee bill636257828336971278.docx", download: true },
+        { label: "Complaint Form", href: "/download forms/ComplainForm636194770479478077.pdf", download: true },
+        { label: "Application Form For Grant Of Fitness Certificate", href: "/download forms/Fitness Certificate635979578518035797.docx", download: true },
+        { label: "Copy Petition Form", href: "/download forms/Copy_Petition_Proforma_Sample_______.pdf", download: true },
+        { label: "Application of Cases List for Lawyers", href: "/download forms/Application_for_cases_list_.pdf", download: true },
+      ],
+    },
+    // { label: "Search Lawyers", href: "/search-lawyers" },
     { label: "News & Updates", href: "/news-updates" },
     { label: "Contact", href: "/contact-us" },
   ];
@@ -71,7 +123,7 @@ export default function Layout({ children }) {
     <div
       className={`${isPrivacyPolicy ? "bg-[#C9C9C9]" : ""}`}
       style={{
-        maxWidth: "1351px",
+        maxWidth: "1708px",
         margin: "0 auto", // centers horizontally
         width: "100%", // ensures it stretches up to maxWidth
       }}
@@ -133,16 +185,29 @@ export default function Layout({ children }) {
                   {/* Dropdown */}
                   {link.dropdown && (
                     <div className="absolute top-full left-0 pt-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                      <div className="bg-white rounded-xl shadow-lg py-2 min-w-[220px] border border-gray-100">
-                        {link.dropdown.map((item) => (
-                          <Link
-                            key={item.label}
-                            href={item.href}
-                            className="block px-5 py-2.5 text-sm text-gray-700 hover:text-green-700 hover:bg-gray-50 transition-colors whitespace-nowrap"
-                          >
-                            {item.label}
-                          </Link>
-                        ))}
+                      <div className="nav-dropdown-scroll bg-white rounded-xl shadow-lg py-2 min-w-[220px] border border-gray-100 max-h-80 overflow-y-auto">
+                        {link.dropdown.map((item) =>
+                          item.download ? (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              download
+                              className="block px-5 py-2.5 text-sm text-gray-700 hover:text-green-700 hover:bg-gray-50 transition-colors whitespace-nowrap"
+                            >
+                              {item.label}
+                            </a>
+                          ) : (
+                            <Link
+                              key={item.label}
+                              href={item.href}
+                              target={item.newTab ? "_blank" : undefined}
+                              rel={item.newTab ? "noopener noreferrer" : undefined}
+                              className="block px-5 py-2.5 text-sm text-gray-700 hover:text-green-700 hover:bg-gray-50 transition-colors whitespace-nowrap"
+                            >
+                              {item.label}
+                            </Link>
+                          )
+                        )}
                       </div>
                     </div>
                   )}
@@ -198,11 +263,11 @@ export default function Layout({ children }) {
 
           {/* Mobile Menu Dropdown */}
           <div
-            className={`md:hidden overflow-hidden transition-all duration-300 ${
-              menuOpen ? "opacity-100" : "max-h-0 opacity-0"
+            className={`md:hidden transition-all duration-300 ${
+              menuOpen ? "opacity-100" : "max-h-0 opacity-0 overflow-hidden"
             }`}
           >
-            <div className="bg-white rounded-2xl mt-2 px-6 py-4 shadow-lg">
+            <div className="nav-dropdown-scroll bg-white rounded-2xl mt-2 px-6 py-4 shadow-lg max-h-[80vh] overflow-y-auto">
               <ul className="flex flex-col gap-4">
                 {navLinks.map((link) => (
                   <li key={link.label}>
@@ -211,17 +276,31 @@ export default function Layout({ children }) {
                         <span className="text-sm text-gray-700 font-medium">
                           {link.label}
                         </span>
-                        <div className="flex flex-col gap-2 pl-4 border-l-2 border-green-700">
-                          {link.dropdown.map((item) => (
-                            <Link
-                              key={item.label}
-                              href={item.href}
-                              className="text-sm text-gray-500 hover:text-green-700 transition-colors"
-                              onClick={() => setMenuOpen(false)}
-                            >
-                              {item.label}
-                            </Link>
-                          ))}
+                        <div className="nav-dropdown-scroll flex flex-col gap-2 pl-4 border-l-2 border-green-700 max-h-60 overflow-y-auto">
+                          {link.dropdown.map((item) =>
+                            item.download ? (
+                              <a
+                                key={item.label}
+                                href={item.href}
+                                download
+                                className="text-sm text-gray-500 hover:text-green-700 transition-colors"
+                                onClick={() => setMenuOpen(false)}
+                              >
+                                {item.label}
+                              </a>
+                            ) : (
+                              <Link
+                                key={item.label}
+                                href={item.href}
+                                target={item.newTab ? "_blank" : undefined}
+                                rel={item.newTab ? "noopener noreferrer" : undefined}
+                                className="text-sm text-gray-500 hover:text-green-700 transition-colors"
+                                onClick={() => setMenuOpen(false)}
+                              >
+                                {item.label}
+                              </Link>
+                            )
+                          )}
                         </div>
                       </div>
                     ) : (

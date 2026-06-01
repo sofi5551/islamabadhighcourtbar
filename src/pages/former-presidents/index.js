@@ -1,62 +1,107 @@
 import Image from "next/image";
-import Link from "next/link";
 
 const presidents = [
   {
-    name: "MR. RIASAT ALI AZAD",
+    name: "SYED WAJID ALI SHAH GILLANI",
     designation: "Advocate",
-    post: "President (2024)",
-    image: "/office-bearer-1.png",
-    slug: "Riasat-Ali-Azad",
+    post: "President (2026-2027)",
+    image: "/President Folder/2026-2027.jpg",
   },
   {
-    name: "MR. TARIQ MAHMOOD BUTT",
+    name: "SYED WAJID ALI SHAH GILLANI",
     designation: "Advocate",
-    post: "President (2023)",
-    image: "/office-bearer-2.png",
-    slug: "Tariq-Mahmood-Butt",
+    post: "President (2025-2026)",
+    image: "/President Folder/2025-2026.jpg",
   },
   {
-    name: "MR. AMJAD ALI TABASSUM",
+    name: "RIASAT ALI AZAD",
     designation: "Advocate",
-    post: "President (2022)",
-    image: "/office-bearer-3.png",
-    slug: "Amjad-Ali-Tabassum",
+    post: "President (2024-2025)",
+    image: "/President Folder/2024-2025.jpg",
   },
   {
-    name: "MR. SAEED AHMED ZAFAR",
+    name: "NAVEED HAYAT MALIK",
     designation: "Advocate",
-    post: "President (2021)",
-    image: "/office-bearer-4.jpg",
-    slug: "Saeed-Ahmed-Zafar",
+    post: "President (2023-2024)",
+    image: "/President Folder/2023-2024.jpg",
   },
   {
-    name: "MR. RAJA ARSHAD MEHMOOD",
+    name: "MUHAMMAD SHOAIB SHAHEEN",
     designation: "Advocate",
-    post: "President (2020)",
-    image: "/office-bearer-5.png",
-    slug: "Raja-Arshad-Mehmood",
+    post: "President (2022-2023)",
+    image: "/President Folder/2022-2023.jpg",
   },
   {
-    name: "MR. CHAUDHRY RIZWAN ZAMAN",
+    name: "ZAHID MAHMOOD RAJA",
     designation: "Advocate",
-    post: "President (2019)",
-    image: "/office-bearer-6.png",
-    slug: "Chaudhry-Rizwan-Zaman",
+    post: "President (2021-2022)",
+    image: "/President Folder/2021-2022.jpg",
   },
   {
-    name: "MR. QASIM IQBAL CHAUDHRY",
+    name: "CH. HASEEB MUHAMMAD",
     designation: "Advocate",
-    post: "President (2018)",
-    image: "/office-bearer-7.png",
-    slug: "Qasim-Iqbal-Chaudhry",
+    post: "President (2020-2021)",
+    image: "/President Folder/2020-2021.jpg",
   },
   {
-    name: "MR. FAYYAZ AHMED AWAN",
+    name: "RAJA INAAM AMEEN MINHAS",
     designation: "Advocate",
-    post: "President (2017)",
-    image: "/office-bearer-8.png",
-    slug: "Fayyaz-Ahmed-Awan",
+    post: "President (2019-2020)",
+    image: "/President Folder/2019-2020.jpg",
+  },
+  {
+    name: "SYED JAVED AKBAR",
+    designation: "Advocate",
+    post: "President (2018-2019)",
+    image: "/President Folder/2018-2019.jpg",
+  },
+  {
+    name: "ARIF CHAUDHARY",
+    designation: "Advocate",
+    post: "President (2017-2018)",
+    image: "/President Folder/2017-2018.jpg",
+  },
+  {
+    name: "TARIQ MEHMOOD JAHANGIRI",
+    designation: "Advocate",
+    post: "President (2016-2017)",
+    image: "/President Folder/2016-2017.jpg",
+  },
+  {
+    name: "RAJA M ALEEM KHAN ABBASI",
+    designation: "Advocate",
+    post: "President (2015-2016)",
+    image: "/President Folder/2015-2016.jpg",
+  },
+  {
+    name: "MOHSIN AKHTAR KAYANI",
+    designation: "Advocate",
+    post: "President (2014-2015)",
+    image: "/President Folder/2014-2015.jpg",
+  },
+  {
+    name: "HAROON UR RASHID",
+    designation: "Advocate",
+    post: "President (2013-2014)",
+    image: "/President Folder/2013-2014.jpg",
+  },
+  {
+    name: "SYED NAYAB HASSAN GARDEZI",
+    designation: "Advocate",
+    post: "President (2012-2013)",
+    image: "/President Folder/2012-2013.jpg",
+  },
+  {
+    name: "CH. MUHAMMAD ASHRAF GUJJAR",
+    designation: "Advocate",
+    post: "President (2011-2012)",
+    image: "/President Folder/2011-2012.jpg",
+  },
+  {
+    name: "SAJJAD AFZAL CHEEMAA",
+    designation: "Advocate",
+    post: "President (2009-2011)",
+    image: "/President Folder/2009-2011.jpg",
   },
 ];
 
@@ -95,7 +140,7 @@ export default function FormerPresidents() {
                 letterSpacing: "-0.04em",
               }}
             >
-              2017 – 2024
+              2009 – 2027
             </p>
           </div>
         </div>
@@ -108,30 +153,28 @@ export default function FormerPresidents() {
               {presidents.map((bearer, index) => (
                 <div
                   key={index}
-                  className="relative overflow-hidden rounded-xl cursor-pointer transition-transform duration-300 hover:scale-105"
+                  className="relative overflow-hidden rounded-xl cursor-pointer transition-transform duration-300 hover:scale-105 ring-1 ring-gray-200"
                 >
-                  <div className="relative w-full aspect-[3/4]">
+                  <div className="relative w-full aspect-[4/3]">
                     <Image
                       src={bearer.image}
                       alt={bearer.name}
                       fill
-                      className="object-cover object-top"
+                      className="object-cover object-top scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between gap-2">
-                      <div className="flex flex-col gap-1">
-                        <p className="basker text-white text-sm md:text-lg leading-tight">
-                          {bearer.name}
-                        </p>
-                        <p className="dmsans text-white text-xs md:text-base opacity-80">
-                          {bearer.designation}
-                        </p>
-                        <p className="dmsans text-white text-xs md:text-base opacity-80">
-                          {bearer.post}
-                        </p>
-                      </div>
-                    </div>
                   </div>
+                  <div className="relative z-10 px-4 py-7 flex flex-col gap-1">
+                    <p className="basker text-white text-sm md:text-lg leading-tight">
+                      {bearer.name}
+                    </p>
+                    <p className="dmsans text-white/70 text-xs md:text-base">
+                      {bearer.designation}
+                    </p>
+                    <p className="dmsans text-white/70 text-xs md:text-base">
+                      {bearer.post}
+                    </p>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none" />
                 </div>
               ))}
             </div>

@@ -81,60 +81,39 @@ function SpinIn({ children, delay = 0, className = "" }) {
 const FULL_WORD = "Association";
 const bearers = [
   {
-    name: "MR. SYED WAJID ALI SHAH Gillani",
+    name: "SABIR AHMAD",
     designation: "Advocate",
     post: "Vice President",
-    image: "/office-bearer-1.png",
-    slug: "Syed-Wajid-Ali-Shah",
+    image: "/Current Cabinet/cabinet-vice-president.jpeg",
+    slug: "Sabir-Ahmad",
   },
   {
-    name: "MR. IFTIKHAR AHMAD Bajwa",
-    designation: "Advocate",
-    post: "Vice President",
-    image: "/office-bearer-2.png",
-    slug: "Iftikhar-Ahmad",
-  },
-  {
-    name: "MR. IMRAN ISHFAQ",
+    name: "USMAN NASIR",
     designation: "Advocate",
     post: "Joint Secretary",
-    image: "/office-bearer-3.png",
-    slug: "Imran-Ishfaq",
+    image: "/Current Cabinet/cabinet-joint-secretary.jpeg",
+    slug: "Usman-Nasir",
   },
   {
-    name: "Barr. Qasim Nawaz Abbasi",
+    name: "FARZANA FAISAL",
     designation: "Advocate",
     post: "Additional Secretary",
-    image: "/office-bearer-4.jpg",
-    slug: "Qasim-Nawaz-Abbasi",
+    image: "/Current Cabinet/cabinet-additional-secretary.jpeg",
+    slug: "Farzana-Faisal",
   },
   {
-    name: "MS. BUSHRA TARIQ RAJA",
+    name: "SYEDA RIDA E BATOOL",
     designation: "Advocate",
-    post: "Additional Secretary",
-    image: "/office-bearer-5.png",
-    slug: "Bushra-Tariq-Raja",
+    post: "Finance Secretary",
+    image: "/Current Cabinet/cabinet-finance-secretary.jpeg",
+    slug: "Syeda-Rida-e-Batool",
   },
   {
-    name: "MR. FAZAL MAULA",
-    designation: "Advocate",
-    post: "Additional Secretary",
-    image: "/office-bearer-6.png",
-    slug: "Fazal-Maula",
-  },
-  {
-    name: "MR. WAJAHAT GHAURI",
+    name: "SHOEBA AKHTAR",
     designation: "Advocate",
     post: "Library Secretary",
-    image: "/office-bearer-7.png",
-    slug: "Wajahat-Ghauri",
-  },
-  {
-    name: "MR. SAIF UR REHMAN SHAH",
-    designation: "Auditor",
-    post: "Bukhari Advocate",
-    image: "/office-bearer-8.png",
-    slug: "Saif-Ur-Rehman-Shah",
+    image: "/Current Cabinet/cabinet-library-secretary.jpeg",
+    slug: "Shoeba-Akhtar",
   },
 ];
 
@@ -147,19 +126,19 @@ function getVisibleCount() {
   return 4;
 }
 const allItems = [
-  { num: "01", label: "LHCBAR\nMEMBERSHIP &\nCARD FORMS" },
-  { num: "02", label: "LHCBAR\nMEMBERSHIP &\nCARD FORMS" },
-  { num: "03", label: "CERTIFICATE\nFOR\nPASSPORT USE" },
-  { num: "04", label: "CERTIFICATE\nFOR DRIVING\nLICENSE" },
-  { num: "05", label: "CERTIFICATE FOR\nNADRA USE" },
-  { num: "06", label: "OPENING OF\nPERSONAL\nACCOUNT" },
-  { num: "07", label: "JUDICIAL\nFORM" },
-  { num: "08", label: "RULES &\nORDERS" },
+  { num: "01", label: "IHCBAR\nMEMBERSHIP &\nCARD FORMS" },
+  { num: "02", label: "IHCBAR\nMEMBERSHIP &\nCARD FORMS" },
+  // { num: "03", label: "CERTIFICATE\nFOR\nPASSPORT USE" },
+  // { num: "04", label: "CERTIFICATE\nFOR DRIVING\nLICENSE" },
+  // { num: "05", label: "CERTIFICATE FOR\nNADRA USE" },
+  // { num: "06", label: "OPENING OF\nPERSONAL\nACCOUNT" },
+  { num: "03", label: "JUDICIAL\nFORM" },
 ];
 
 const lastRow = [
-  { num: "09", label: "LHCBAR RULES" },
-  { num: "10", label: "FIR COPY" },
+  { num: "04", label: "RULES &\nORDERS" },
+  { num: "05", label: "IHCBAR RULES" },
+  // { num: "10", label: "FIR COPY" },
 ];
 
 function Card({ num, label, smLast, lgLast, hasBottom }) {
@@ -259,8 +238,8 @@ export default function Home() {
     //   icon: null, // rendered separately with two overlapping icons
     // },
     { label: "FREE LEGAL AID\nFOR PUBLIC", icon: "/legal-aid-logo.png" },
-    { label: "POST OFFICE", icon: "/passport-logo.png" },
-    { label: "NADRA OFFICE\nComing Soon", icon: "/nadra-logo.png" },
+    { label: "POST OFFICE\n(Coming Soon)", icon: "/passport-logo.png" },
+    { label: "NADRA OFFICE\n(Coming Soon)", icon: "/nadra-logo.png" },
     // { label: "POLICE\nMARKAZ", icon: "/police-logo.png" },
   ];
   const [startIndex, setStartIndex] = useState(0);
@@ -483,7 +462,7 @@ export default function Home() {
                     </Link>
                   </button>
 
-                  <button
+                  {/* <button
                     className="dmsans flex items-center gap-2 px-5 py-3 rounded-full border border-white text-white cursor-pointer transition-all duration-200 hover:bg-white hover:text-green-900 hover:border-green-900 hover:scale-105 group"
                     style={{
                       fontSize: "14px",
@@ -500,7 +479,7 @@ export default function Home() {
                       style={{ filter: "brightness(0) invert(1)" }}
                     />
                     Case Management
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
@@ -553,7 +532,7 @@ export default function Home() {
               >
                 PRESIDENT FOR
                 <br />
-                YEAR 2025
+                YEAR 2026
               </div>
             </div>
 
@@ -584,7 +563,7 @@ export default function Home() {
               >
                 Mr. Syed Wajid Ali Shah
                 <br />
-                GIllani Advocate
+                GIllani Advocate Supreme Court
               </h2>
 
               <p
@@ -607,6 +586,7 @@ export default function Home() {
                   lineHeight: "124%",
                   letterSpacing: "-0.04em",
                   color: "#595959",
+                  textAlign: "justify",
                 }}
               >
                 <p>
@@ -657,7 +637,7 @@ export default function Home() {
               >
                 SECRETARY FOR
                 <br />
-                YEAR 2025
+                YEAR 2026
               </div>
             </div>
 
@@ -686,9 +666,9 @@ export default function Home() {
                   color: "#1E1E1E",
                 }}
               >
-                Barr. Qasim Nawaz
+                Barrister Qasim Nawaz
                 <br />
-                Abbasi Advocate
+                Abbasi
               </h2>
 
               <p
@@ -711,6 +691,7 @@ export default function Home() {
                   lineHeight: "124%",
                   letterSpacing: "-0.04em",
                   color: "#595959",
+                  textAlign: "justify",
                 }}
               >
                 <p>
@@ -991,7 +972,11 @@ export default function Home() {
           {/* ── Grid of Facilities ── */}
           <div className="flex flex-wrap justify-center gap-3 md:px-30">
             {facilities.map((facility, index) => (
-              <FadeIn key={index} delay={index * 80} className="w-[calc(50%-6px)] sm:w-[calc(33.333%-8px)]">
+              <FadeIn
+                key={index}
+                delay={index * 80}
+                className="w-[calc(50%-6px)] sm:w-[calc(33.333%-8px)]"
+              >
                 <div
                   className="bg-white flex flex-col items-center justify-center gap-3 py-8 px-4 transition-all duration-300 hover:scale-105"
                   style={{ borderRadius: "11px", height: "148.84px" }}
@@ -1030,7 +1015,7 @@ export default function Home() {
 
                   {/* Label */}
                   <p
-                    className="basker text-center whitespace-pre-line"
+                    className="basker text-center"
                     style={{
                       fontSize: "clamp(13px, 1.2vw, 26px)",
                       lineHeight: "95%",
@@ -1038,7 +1023,17 @@ export default function Home() {
                       color: "#000000",
                     }}
                   >
-                    {facility.label}
+                    {facility.label.split("\n").map((line, li) => (
+                      <span
+                        key={li}
+                        style={{
+                          display: "block",
+                          marginTop: li > 0 && line.includes("Coming Soon") ? "8px" : 0,
+                        }}
+                      >
+                        {line}
+                      </span>
+                    ))}
                   </p>
                 </div>
               </FadeIn>
@@ -1265,23 +1260,24 @@ export default function Home() {
         </FadeIn>
 
         {/* ── Items grid: 2 cols on sm, 4 cols on lg ── */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 relative lg:px-20 px-10">
+        <div className="grid grid-cols-2 lg:grid-cols-3 relative lg:px-20 px-10 lg:max-w-4xl lg:mx-auto">
           {allItems.map((item, i) => {
-            const posInSmRow = i % 2; // 0 or 1 in 2-col layout
-            const posInLgRow = i % 4; // 0–3 in 4-col layout
-            const smLast = posInSmRow === 1;
-            const lgLast = posInLgRow === 3;
-            const hasBottom = i < allItems.length - 4; // rows 1 only (not row 2 of 4-col)
-            // In 2-col mode row boundary is every 2, so bottom for first 6 of 8
-            // We'll handle per-breakpoint with two spans inside Card
+            const smLast = i % 2 === 1; // last in 2-col sm row
+            const lgLast = i % 3 === 2; // last in 3-col lg row → no right border
 
             return (
-              <FadeIn key={item.num} delay={i * 60} className="h-full">
+              <FadeIn
+                key={item.num}
+                delay={i * 60}
+                className={
+                  i === 2 ? "h-full col-span-2 lg:col-span-1" : "h-full"
+                }
+              >
                 <div
                   className="flex flex-col items-center justify-center gap-4 py-10 px-4 relative cursor-pointer hover:font-bold h-full"
                   style={{ minHeight: "180px" }}
                 >
-                  {/* Right border: show always except smLast (hidden on sm) and lgLast (hidden on lg) */}
+                  {/* Right border: hidden on lg last-in-row and sm last-in-row */}
                   {!lgLast && (
                     <span
                       className={`absolute right-0 top-0 bottom-0 w-px ${smLast ? "hidden lg:block" : "block"}`}
@@ -1292,24 +1288,14 @@ export default function Home() {
                     />
                   )}
 
-                  {/* Bottom border on lg: rows 1 and 2 (not row 3) → i < 4 */}
+                  {/* Bottom border: all items on lg (one row); only first sm row on mobile */}
                   <span
-                    className={`absolute left-0 right-0 bottom-0 h-px ${i < 4 ? "block" : "hidden lg:block"}`}
+                    className={`absolute left-0 right-0 bottom-0 h-px ${i < 2 ? "block" : "hidden lg:block"}`}
                     style={{
                       backgroundImage:
                         "repeating-linear-gradient(to right, #CCCCCC 0, #CCCCCC 6px, transparent 6px, transparent 12px)",
                     }}
                   />
-                  {/* Bottom border on sm: every row except last two (i < 6) */}
-                  {i >= 4 && i < 6 && (
-                    <span
-                      className="absolute left-0 right-0 bottom-0 h-px lg:hidden"
-                      style={{
-                        backgroundImage:
-                          "repeating-linear-gradient(to right, #CCCCCC 0, #CCCCCC 6px, transparent 6px, transparent 12px)",
-                      }}
-                    />
-                  )}
 
                   <div
                     className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
@@ -1345,7 +1331,6 @@ export default function Home() {
         {/* On sm: 2-col full width, no right border on 2nd */}
         <FadeIn delay={200}>
           <div className="grid grid-cols-2 lg:grid-cols-4 lg:px-20 px-10">
-            {/* lg spacer left */}
             <div className="hidden lg:block" />
 
             {lastRow.map((item, i) => (
@@ -1354,7 +1339,6 @@ export default function Home() {
                 className="flex flex-col items-center justify-center gap-4 py-10 px-4 relative cursor-pointer hover:font-bold"
                 style={{ minHeight: "180px" }}
               >
-                {/* Top dashed border */}
                 <span
                   className="absolute left-0 right-0 top-0 h-px"
                   style={{
@@ -1363,7 +1347,6 @@ export default function Home() {
                   }}
                 />
 
-                {/* Left dashed border */}
                 <span
                   className={`absolute top-0 bottom-0 left-0 w-px ${
                     i === 0 ? "hidden lg:block" : ""
@@ -1374,7 +1357,6 @@ export default function Home() {
                   }}
                 />
 
-                {/* Right dashed border */}
                 <span
                   className={`absolute top-0 bottom-0 right-0 w-px ${
                     i === lastRow.length - 1 ? "hidden lg:block" : ""
@@ -1385,7 +1367,6 @@ export default function Home() {
                   }}
                 />
 
-                {/* Circle + Image */}
                 <div
                   className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
                   style={{ backgroundColor: "#143D2B" }}
@@ -1413,7 +1394,6 @@ export default function Home() {
               </div>
             ))}
 
-            {/* lg spacer right */}
             <div className="hidden lg:block" />
           </div>
         </FadeIn>

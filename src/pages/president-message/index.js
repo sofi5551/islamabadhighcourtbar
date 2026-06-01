@@ -30,7 +30,7 @@ const bearer = {
   pageTitle: "President Message",
   bannerImage: "/president-message.png",
   personImage: "/home2.png",
-  name: "Mr. Syed Wajid Ali Shah\nGIllani Advocate",
+  name: "Mr. Syed Wajid Ali Shah\nGIllani Advocate Supreme Court",
   role: "PRESIDENT FOR",
   tag: "Excellence is not an exception",
   paragraphs: [
@@ -103,7 +103,7 @@ export default function PresidentMessage() {
             >
               {bearer.role}
               <br />
-              YEAR 2025
+              YEAR 2026
             </div>
           </FadeIn>
 
@@ -154,6 +154,7 @@ export default function PresidentMessage() {
                 lineHeight: "124%",
                 letterSpacing: "-0.04em",
                 color: "#595959",
+                textAlign: "justify",
               }}
             >
               {bearer.paragraphs.map((para, i) => (

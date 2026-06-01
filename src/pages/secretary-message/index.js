@@ -30,7 +30,7 @@ const bearer = {
   pageTitle: "Secretary Message",
   bannerImage: "/secretary-message.png",
   personImage: "/office-bearer-4.jpg",
-  name: "Barr. Qasim Nawaz\Abbasi Advocate",
+  name: "Barrister Qasim Nawaz \Abbasi",
   role: "SECRETARY FOR",
   tag: "Secretary Message",
   paragraphs: [
@@ -104,7 +104,7 @@ export default function SecretaryMessage() {
             >
               {bearer.role}
               <br />
-              YEAR 2025
+              YEAR 2026
             </div>
           </FadeIn>
 
@@ -151,10 +151,11 @@ export default function SecretaryMessage() {
             <div
               className="dmsans flex flex-col gap-3"
               style={{
-                fontSize: "clamp(13px, 1.1vw, 20px)",
+                fontSize: "clamp(13px, 1.8vw, 24px)",
                 lineHeight: "124%",
                 letterSpacing: "-0.04em",
                 color: "#595959",
+                textAlign: "justify",
               }}
             >
               {bearer.paragraphs.map((para, i) => (

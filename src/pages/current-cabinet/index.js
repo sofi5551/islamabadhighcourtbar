@@ -3,60 +3,39 @@ import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 const bearers = [
   {
-    name: "MR. SYED WAJID ALI SHAH",
-    designation: "Gillani Advocate",
-    post: "Vice President",
-    image: "/office-bearer-1.png",
-    slug: "Syed-Wajid-Ali-Shah",
-  },
-  {
-    name: "MR. IFTIKHAR AHMAD Bajwa",
+    name: "SABIR AHMAD",
     designation: "Advocate",
     post: "Vice President",
-    image: "/office-bearer-2.png",
-    slug: "Iftikhar-Ahmad",
+    image: "/Current Cabinet/cabinet-vice-president.jpeg",
+    slug: "Sabir-Ahmad",
   },
   {
-    name: "MR. IMRAN ISHFAQ",
+    name: "USMAN NASIR",
     designation: "Advocate",
     post: "Joint Secretary",
-    image: "/office-bearer-3.png",
-    slug: "Imran-Ishfaq",
+    image: "/Current Cabinet/cabinet-joint-secretary.jpeg",
+    slug: "Usman-Nasir",
   },
   {
-    name: "Barr. Qasim Nawaz Abbasi",
+    name: "FARZANA FAISAL",
     designation: "Advocate",
     post: "Additional Secretary",
-    image: "/office-bearer-4.jpg",
-    slug: "Qasim-Nawaz-Abbasi",
+    image: "/Current Cabinet/cabinet-additional-secretary.jpeg",
+    slug: "Farzana-Faisal",
   },
   {
-    name: "MS. BUSHRA TARIQ RAJA",
+    name: "SYEDA RIDA E BATOOL",
     designation: "Advocate",
-    post: "Additional Secretary",
-    image: "/office-bearer-5.png",
-    slug: "Bushra-Tariq-Raja",
+    post: "Finance Secretary",
+    image: "/Current Cabinet/cabinet-finance-secretary.jpeg",
+    slug: "Syeda-Rida-e-Batool",
   },
   {
-    name: "MR. FAZAL MAULA",
-    designation: "Advocate",
-    post: "Additional Secretary",
-    image: "/office-bearer-6.png",
-    slug: "Fazal-Maula",
-  },
-  {
-    name: "MR. WAJAHAT GHAURI",
+    name: "SHOEBA AKHTAR",
     designation: "Advocate",
     post: "Library Secretary",
-    image: "/office-bearer-7.png",
-    slug: "Wajahat-Ghauri",
-  },
-  {
-    name: "MR. SAIF UR REHMAN SHAH",
-    designation: "Auditor",
-    post: "Bukhari Advocate",
-    image: "/office-bearer-8.png",
-    slug: "Saif-Ur-Rehman-Shah",
+    image: "/Current Cabinet/cabinet-library-secretary.jpeg",
+    slug: "Shoeba-Akhtar",
   },
 ];
 export default function Bearer() {
@@ -101,7 +80,7 @@ export default function Bearer() {
                 letterSpacing: "-0.04em",
               }}
             >
-              2025-02-24
+              2026-02-24
             </p>
           </div>
         </div>

@@ -103,7 +103,7 @@ export default function AdministrativeOfficerMessage() {
             >
               {bearer.role}
               <br />
-              YEAR 2025
+              YEAR 2026
             </div>
           </FadeIn>
 

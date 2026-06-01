@@ -1,62 +1,107 @@
 import Image from "next/image";
-import Link from "next/link";
 
 const secretaries = [
   {
-    name: "MR. SHAFAQAT ABBAS TARAR",
+    name: "BARRISTER QASIM NAWAZ ABBASI",
     designation: "Advocate",
-    post: "Secretary (2024)",
-    image: "/office-bearer-1.png",
-    slug: "Shafaqat-Abbas-Tarar",
+    post: "Secretary (2026-2027)",
+    image: "/Secretary Folder/2026-2027.jpg",
   },
   {
-    name: "MR. ASIF IQBAL CHAUDHRY",
+    name: "CH. MANZOOR AHMAD JAJJA",
     designation: "Advocate",
-    post: "Secretary (2023)",
-    image: "/office-bearer-2.png",
-    slug: "Asif-Iqbal-Chaudhry",
+    post: "Secretary (2025-2026)",
+    image: "/Secretary Folder/2025-2026.jpg",
   },
   {
-    name: "MR. ADNAN ZAFAR GONDAL",
+    name: "SHAFQAT ABBAS TARAR",
     designation: "Advocate",
-    post: "Secretary (2022)",
-    image: "/office-bearer-3.png",
-    slug: "Adnan-Zafar-Gondal",
+    post: "Secretary (2024-2025)",
+    image: "/Secretary Folder/2024-2025.jpg",
   },
   {
-    name: "MR. JAVED IQBAL HASHMI",
+    name: "RIZWAN SHABBIR KAYANI",
     designation: "Advocate",
-    post: "Secretary (2021)",
-    image: "/office-bearer-4.jpg",
-    slug: "Javed-Iqbal-Hashmi",
+    post: "Secretary (2023-2024)",
+    image: "/Secretary Folder/2023-2024.jpg",
   },
   {
-    name: "MR. TAHIR IQBAL CHAUDHRY",
+    name: "SAAD AHMED RAJOOT",
     designation: "Advocate",
-    post: "Secretary (2020)",
-    image: "/office-bearer-5.png",
-    slug: "Tahir-Iqbal-Chaudhry",
+    post: "Secretary (2022-2023)",
+    image: "/Secretary Folder/2022-2023.jpg",
   },
   {
-    name: "MR. RASHID LATIF KHAN",
+    name: "BARRISTER TASSADAQ HANIF",
     designation: "Advocate",
-    post: "Secretary (2019)",
-    image: "/office-bearer-6.png",
-    slug: "Rashid-Latif-Khan",
+    post: "Secretary (2021-2022)",
+    image: "/Secretary Folder/2021-2022.jpg",
   },
   {
-    name: "MR. NASIR MEHMOOD BUTT",
+    name: "SOHAIL AKBAR CHAUDHRY",
     designation: "Advocate",
-    post: "Secretary (2018)",
-    image: "/office-bearer-7.png",
-    slug: "Nasir-Mehmood-Butt",
+    post: "Secretary (2020-2021)",
+    image: "/Secretary Folder/2021-2021.jpg",
   },
   {
-    name: "MR. JUNAID IQBAL GILL",
+    name: "MUHAMMAD UMAIR BALOCH",
     designation: "Advocate",
-    post: "Secretary (2017)",
-    image: "/office-bearer-8.png",
-    slug: "Junaid-Iqbal-Gill",
+    post: "Secretary (2019-2020)",
+    image: "/Secretary Folder/2019-2020.jpg",
+  },
+  {
+    name: "RAJA FAISAL YOUNIS",
+    designation: "Advocate",
+    post: "Secretary (2018-2019)",
+    image: "/Secretary Folder/2018-2019.jpg",
+  },
+  {
+    name: "MUHAMMAD ARBAB ALAM ABBASI",
+    designation: "Advocate",
+    post: "Secretary (2017-2018)",
+    image: "/Secretary Folder/2017-2018.jpg",
+  },
+  {
+    name: "MUHAMMAD WAQAS MALIK",
+    designation: "Advocate",
+    post: "Secretary (2016-2017)",
+    image: "/Secretary Folder/2016-2017.jpg",
+  },
+  {
+    name: "SARDAR SHAUKAT HAYAT KHAN",
+    designation: "Advocate",
+    post: "Secretary (2015-2016)",
+    image: "/Secretary Folder/2015-2016.jpg",
+  },
+  {
+    name: "MRS. SHIREEN IMRAN",
+    designation: "Advocate",
+    post: "Secretary (2014-2015)",
+    image: "/Secretary Folder/2014-2015.jpg",
+  },
+  {
+    name: "CH. HASEEB MUHAMMAD",
+    designation: "Advocate",
+    post: "Secretary (2013-2014)",
+    image: "/Secretary Folder/2013-2014.jpg",
+  },
+  {
+    name: "CH. M JUNAID AKHTAR CHOHAN",
+    designation: "Advocate",
+    post: "Secretary (2012-2013)",
+    image: "/Secretary Folder/2012-2013.jpg",
+  },
+  {
+    name: "RAJA SHAKIL KHAN ABBASI",
+    designation: "Advocate",
+    post: "Secretary (2011-2012)",
+    image: "/Secretary Folder/2011-2012.jpg",
+  },
+  {
+    name: "RAJA INAAM AMEEN MINHAS",
+    designation: "Advocate",
+    post: "Secretary (2009-2011)",
+    image: "/Secretary Folder/2009-2011.jpg",
   },
 ];
 
@@ -95,7 +140,7 @@ export default function FormerSecretaries() {
                 letterSpacing: "-0.04em",
               }}
             >
-              2017 – 2024
+              2009 – 2027
             </p>
           </div>
         </div>
@@ -108,30 +153,28 @@ export default function FormerSecretaries() {
               {secretaries.map((bearer, index) => (
                 <div
                   key={index}
-                  className="relative overflow-hidden rounded-xl cursor-pointer transition-transform duration-300 hover:scale-105"
+                  className="relative overflow-hidden rounded-xl cursor-pointer transition-transform duration-300 hover:scale-105 ring-1 ring-gray-200"
                 >
-                  <div className="relative w-full aspect-[3/4]">
+                  <div className="relative w-full aspect-[4/3]">
                     <Image
                       src={bearer.image}
                       alt={bearer.name}
                       fill
-                      className="object-cover object-top"
+                      className="object-cover object-top scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between gap-2">
-                      <div className="flex flex-col gap-1">
-                        <p className="basker text-white text-sm md:text-lg leading-tight">
-                          {bearer.name}
-                        </p>
-                        <p className="dmsans text-white text-xs md:text-base opacity-80">
-                          {bearer.designation}
-                        </p>
-                        <p className="dmsans text-white text-xs md:text-base opacity-80">
-                          {bearer.post}
-                        </p>
-                      </div>
-                    </div>
                   </div>
+                  <div className="relative z-10 px-4 py-7 flex flex-col gap-1">
+                    <p className="basker text-white text-sm md:text-lg leading-tight">
+                      {bearer.name}
+                    </p>
+                    <p className="dmsans text-white/70 text-xs md:text-base">
+                      {bearer.designation}
+                    </p>
+                    <p className="dmsans text-white/70 text-xs md:text-base">
+                      {bearer.post}
+                    </p>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none" />
                 </div>
               ))}
             </div>

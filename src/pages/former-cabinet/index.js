@@ -3,6 +3,32 @@ import { useState } from "react";
 
 // ── Cabinet data per year ─────────────────────────────────────────────────────
 const cabinetData = {
+  2025: [
+    { sno: "01", name: "SYED WAJID ALI SHAH GILLANI", designation: "President" },
+    { sno: "02", name: "IFTIKHAR AHMAD BAJWA", designation: "Vice President" },
+    { sno: "03", name: "MANZOOR AHMED JAJJA", designation: "Secretary" },
+    { sno: "04", name: "IMRAN ISHFAQ", designation: "Joint Secretary" },
+    { sno: "05", name: "BUSHRA TARIQ RAJA", designation: "Additional Secretary" },
+    { sno: "06", name: "FAZAL MAULA", designation: "Finance Secretary" },
+    { sno: "07", name: "WAJAHAT GHAURI", designation: "Library Secretary" },
+    { sno: "08", name: "SAIF UR REHMAN SHAH BUKHARI", designation: "Auditor" },
+    { sno: "09", name: "CH. HASSAN SAJJAD", designation: "Member Executive" },
+    { sno: "10", name: "FAROOQ IQBAL KHAN", designation: "Member Executive" },
+    { sno: "11", name: "MALIK MUZAFFAR KHAN", designation: "Member Executive" },
+    { sno: "12", name: "MANZOOR AHMAD", designation: "Member Executive" },
+    { sno: "13", name: "MUHAMMAD ADNAN HUSNAIN", designation: "Member Executive" },
+    { sno: "14", name: "MUHAMMAD UMAR MUKHTIAR", designation: "Member Executive" },
+    { sno: "15", name: "MUHAMMAD USMAN", designation: "Member Executive" },
+    { sno: "16", name: "NAZISH BIBI", designation: "Member Executive" },
+    { sno: "17", name: "RASHID HANEEF", designation: "Member Executive" },
+    { sno: "18", name: "TALAT RIZWAN", designation: "Member Executive" },
+    { sno: "19", name: "RAJA MANAN KHAN", designation: "Member Executive" },
+    { sno: "20", name: "MUHAMMAD NAWAZ GONDAL", designation: "Member Executive" },
+    { sno: "21", name: "DR. PALWASHA AYAZ KHAN", designation: "Member Executive" },
+    { sno: "22", name: "USMAN ALI", designation: "Member Executive" },
+    { sno: "23", name: "MUHAMMAD SHAFQAT", designation: "Member Executive" },
+    { sno: "24", name: "GHULAM MURTAZA KHAN", designation: "Member Executive" },
+  ],
   2024: [
     { sno: "01", name: "MR. RIASAT ALI AZAD", designation: "President" },
     { sno: "02", name: "MR. MUJAHID ISLAM ASIF", designation: "Vice President" },
@@ -158,7 +184,7 @@ const cabinetData = {
   ],
 };
 
-const years = Array.from({ length: 14 }, (_, i) => 2024 - i); // 2024 down to 2011
+const years = Array.from({ length: 15 }, (_, i) => 2025 - i); // 2025 down to 2011
 
 const cellStyle = {
   fontFamily: "'DM Sans', sans-serif",
@@ -178,7 +204,7 @@ const headerStyle = {
 };
 
 export default function FormerCabinet() {
-  const [selectedYear, setSelectedYear] = useState(2024);
+  const [selectedYear, setSelectedYear] = useState(2025);
   const members = cabinetData[selectedYear] || [];
 
   return (
