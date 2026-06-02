@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
@@ -30,8 +31,8 @@ const bearer = {
   pageTitle: "Administrative Officer Message",
   bannerImage: "/president-message.png",
   personImage: "/home2.png",
-  name: "Mr. Qazi Rashid Ahmad",
-  role: "ADMINISTRATIVE OFFICER",
+  name: "Syed Abdullah Nawaz Gillani",
+  role: "ADMIN OFFICER",
   tag: "Service with dedication",
   paragraphs: [
     "It is a privilege to serve as the Administrative Officer of the Islamabad High Court Bar Association. I am committed to ensuring the smooth and efficient functioning of all administrative operations of the Association.",
@@ -44,6 +45,9 @@ const bearer = {
 export default function AdministrativeOfficerMessage() {
   return (
     <>
+      <Head>
+        <title>Islamabad High Court Bar Association: Administrative Officer Message</title>
+      </Head>
       {/* ── Hero Banner ── */}
       <section className="w-full">
         <div
@@ -154,6 +158,7 @@ export default function AdministrativeOfficerMessage() {
                 lineHeight: "124%",
                 letterSpacing: "-0.04em",
                 color: "#595959",
+                textAlign: "justify",
               }}
             >
               {bearer.paragraphs.map((para, i) => (

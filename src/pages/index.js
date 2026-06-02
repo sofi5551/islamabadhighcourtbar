@@ -1,5 +1,6 @@
+import Head from "next/head";
 import Image from "next/image";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import Link from "next/link";
 import newsData from "@/data/newsData";
 
@@ -242,6 +243,8 @@ export default function Home() {
     { label: "NADRA OFFICE\n(Coming Soon)", icon: "/nadra-logo.png" },
     // { label: "POLICE\nMARKAZ", icon: "/police-logo.png" },
   ];
+  const [items, setItems] = useState([...bearers]);
+  const [noTransition, setNoTransition] = useState(false);
   const [startIndex, setStartIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(4);
   const [cardWidth, setCardWidth] = useState(0);
@@ -266,14 +269,33 @@ export default function Home() {
   }, []);
 
   const canPrev = startIndex > 0;
-  const canNext = startIndex + visibleCount < bearers.length;
+  const canNext = items.length > visibleCount;
 
   const handlePrev = () => {
     if (canPrev) setStartIndex((i) => i - 1);
   };
-  const handleNext = () => {
-    if (canNext) setStartIndex((i) => i + 1);
-  };
+
+  const handleNext = useCallback(() => {
+    if (startIndex + visibleCount < items.length) {
+      setStartIndex((i) => i + 1);
+    } else {
+      // Silently rotate: move first item to end, reset to index 0 (no animation)
+      setNoTransition(true);
+      setItems((prev) => [...prev.slice(1), prev[0]]);
+      setStartIndex(0);
+      // Re-enable transition and advance one step
+      setTimeout(() => {
+        setNoTransition(false);
+        setStartIndex(1);
+      }, 50);
+    }
+  }, [startIndex, visibleCount, items.length]);
+
+  // Auto-advance every 3 seconds
+  useEffect(() => {
+    const timer = setInterval(handleNext, 3000);
+    return () => clearInterval(timer);
+  }, [handleNext]);
 
   const translateX = startIndex * (cardWidth + GAP);
 
@@ -292,6 +314,9 @@ export default function Home() {
   };
   return (
     <>
+      <Head>
+        <title>Islamabad High Court Bar Association</title>
+      </Head>
       <section className="w-full">
         {/* Background image container with border radius */}
         <div
@@ -1143,15 +1168,16 @@ export default function Home() {
               ref={trackRef}
             >
               <div
-                className="flex transition-transform duration-500 ease-in-out"
+                className="flex"
                 style={{
                   gap: `${GAP}px`,
                   transform: `translateX(-${translateX}px)`,
+                  transition: noTransition ? "none" : "transform 500ms ease-in-out",
                 }}
               >
-                {bearers.map((bearer, index) => (
+                {items.map((bearer) => (
                   <div
-                    key={index}
+                    key={bearer.slug}
                     className="relative flex-shrink-0 overflow-hidden transition-transform duration-300 hover:scale-105"
                     style={{
                       width:

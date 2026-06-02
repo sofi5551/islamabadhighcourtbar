@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
@@ -45,6 +46,9 @@ const bearer = {
 export default function SecretaryMessage() {
   return (
     <>
+      <Head>
+        <title>Islamabad High Court Bar Association: Secretary Message</title>
+      </Head>
       {/* ── Hero Banner ── */}
       <section className="w-full">
         <div

@@ -1,8 +1,12 @@
+import Head from "next/head";
 import Image from "next/image";
 
 export default function OfficeBearerPage({ bearer }) {
   return (
     <>
+      <Head>
+        <title>Islamabad High Court Bar Association: {bearer.name}</title>
+      </Head>
       {/* ── Hero Banner ── */}
       <section className="w-full">
         <div

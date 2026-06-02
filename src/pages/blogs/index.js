@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 const blogs = [
@@ -228,6 +229,9 @@ function BlogCard({ blog }) {
 export default function Blogs() {
   return (
     <>
+      <Head>
+        <title>Islamabad High Court Bar Association: Blogs</title>
+      </Head>
       <section className="w-full">
         <div
           className="relative w-full overflow-hidden flex justify-center items-center"

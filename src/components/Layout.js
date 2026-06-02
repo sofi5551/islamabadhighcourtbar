@@ -34,11 +34,11 @@ export default function Layout({ children }) {
         { label: "Current Cabinet", href: "/current-cabinet" },
         { label: "Former Cabinet", href: "/former-cabinet" },
         // { label: "Current Committees", href: "/current-committees" },
-        { label: "Current Administration", href: "/current-administration" },
         {
           label: "Administrative Officer",
           href: "/administrative-officer-message",
         },
+        { label: "Current Administration", href: "/current-administration" },
       ],
     },
     {

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 
 const secretaries = [
@@ -108,6 +109,9 @@ const secretaries = [
 export default function FormerSecretaries() {
   return (
     <>
+      <Head>
+        <title>Islamabad High Court Bar Association: Former Secretaries</title>
+      </Head>
       <section className="w-full">
         <div
           className="relative w-full overflow-hidden flex justify-center items-center"

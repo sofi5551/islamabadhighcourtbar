@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -36,6 +37,9 @@ export default function NewsUpdates() {
 
   return (
     <>
+      <Head>
+        <title>Islamabad High Court Bar Association: News &amp; Updates</title>
+      </Head>
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="w-full">
         <div

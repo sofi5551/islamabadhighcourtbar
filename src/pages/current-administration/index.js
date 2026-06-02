@@ -1,88 +1,89 @@
+import Head from "next/head";
 import Image from "next/image";
 const employees = [
   {
     sno: "01",
     name: "Syed Abdullalh Nawa Gillani",
     cellNumber: "—",
-    designation: "Admin Officer (NPS-16)",
+    designation: "Admin Officer",
   },
   {
     sno: "02",
     name: "Mussadiq Hussain",
     cellNumber: "—",
-    designation: "Assistant Account Officer (NPS-14)",
+    designation: "Assistant Account Officer",
   },
   {
     sno: "03",
     name: "Qazi Rashid Ahmad",
     cellNumber: "0300-5277265",
-    designation: "Superintendent (NPS-12)",
+    designation: "Superintendent",
   },
   {
     sno: "04",
     name: "Muhammad Rizwan",
     cellNumber: "0333-5633336",
-    designation: "Data Entry Operator (NPS-9)",
+    designation: "Data Entry Operator",
   },
   {
     sno: "05",
     name: "Hassan Akhtar",
     cellNumber: "0320-8572794",
-    designation: "Clerk (NPS-7)",
+    designation: "Clerk",
   },
   {
     sno: "06",
     name: "Mubashir Hashmi",
     cellNumber: "0333-5126666",
-    designation: "Bar Attendant (NPS-5)",
+    designation: "Bar Attendant",
   },
   {
     sno: "07",
     name: "M. Imran Abbasi",
     cellNumber: "0343-1210022\n0301-5502710",
-    designation: "Bar Attendant (NPS-5)",
+    designation: "Bar Attendant",
   },
   {
     sno: "08",
     name: "Zahid Akhtar",
     cellNumber: "0343-8346663\n0310-5058004",
-    designation: "Bar Attendant (NPS-5)",
+    designation: "Bar Attendant",
   },
   {
     sno: "09",
     name: "Muhammad Tariq",
     cellNumber: "0300-9182834\n0333-5723420",
-    designation: "Bar Attendant (NPS-5)",
+    designation: "Bar Attendant",
   },
   {
     sno: "10",
     name: "Raja Khalid Mehmood",
     cellNumber: "0316-5773007",
-    designation: "Driver (NPS-5)",
+    designation: "Driver",
   },
   {
     sno: "11",
     name: "Babar Masih",
     cellNumber: "0341-0001831",
-    designation: "Driver (NPS-5)",
+    designation: "Driver",
   },
   {
     sno: "12",
     name: "Qamar Abbas",
     cellNumber: "0333-5984055",
-    designation: "Naib Qasid (NPS-4)",
+    designation: "Naib Qasid",
   },
   {
     sno: "13",
     name: "Asif Gill",
     cellNumber: "0343-1522405",
-    designation: "Sweeper (NPS-4)",
+    designation: "Sweeper",
   },
   {
     sno: "14",
     name: "Arman Rashid",
     cellNumber: "—",
-    designation: "Sweeper (Contractual)",
+    designation: "Sweeper",
   },
   {
     sno: "15",
@@ -111,6 +112,9 @@ const headerStyle = {
 export default function Bearer() {
   return (
     <>
+      <Head>
+        <title>Islamabad High Court Bar Association: Current Administration</title>
+      </Head>
       <section className="w-full">
         {/* Background image container with border radius */}
         <div

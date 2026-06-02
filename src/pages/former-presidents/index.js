@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 
 const presidents = [
@@ -108,6 +109,9 @@ const presidents = [
 export default function FormerPresidents() {
   return (
     <>
+      <Head>
+        <title>Islamabad High Court Bar Association: Former Presidents</title>
+      </Head>
       <section className="w-full">
         <div
           className="relative w-full overflow-hidden flex justify-center items-center"

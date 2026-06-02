@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
@@ -5,6 +6,9 @@ import { useEffect, useState, useRef } from "react";
 export default function Bearer() {
   return (
     <>
+      <Head>
+        <title>Islamabad High Court Bar Association: Current Committees</title>
+      </Head>
       <section className="w-full">
         {/* Background image container with border radius */}
         <div

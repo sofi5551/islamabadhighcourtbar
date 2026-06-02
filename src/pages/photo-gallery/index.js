@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -180,6 +181,9 @@ export default function PhotoGallery() {
 
   return (
     <>
+      <Head>
+        <title>Islamabad High Court Bar Association: Photo Gallery</title>
+      </Head>
       {/* Hero */}
       <section className="w-full">
         <div

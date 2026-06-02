@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -14,6 +15,9 @@ export default function NewsDetail() {
 
   return (
     <>
+      <Head>
+        <title>Islamabad High Court Bar Association: {article.title}</title>
+      </Head>
       {/* ── Section 1: Full-width image with title overlay ───────────────── */}
       <section className="w-full">
         <div

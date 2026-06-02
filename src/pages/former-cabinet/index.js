@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -209,6 +210,9 @@ export default function FormerCabinet() {
 
   return (
     <>
+      <Head>
+        <title>Islamabad High Court Bar Association: Former Cabinet</title>
+      </Head>
       {/* ── Section 1: Hero (unchanged) ───────────────────────────────────── */}
       <section className="w-full">
         <div
