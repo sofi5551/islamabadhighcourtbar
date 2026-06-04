@@ -134,8 +134,8 @@ function getVisibleCount() {
   return 4;
 }
 const allItems = [
-  { num: "01", label: "IHCBAR\nMEMBERSHIP &\nCARD FORMS" },
-  { num: "02", label: "IHCBAR\nMEMBERSHIP &\nCARD FORMS" },
+  { num: "01", label: "IHCBA\nMEMBERSHIP FORM" },
+  { num: "02", label: "IHCBA\nCARD FORM" },
   // { num: "03", label: "CERTIFICATE\nFOR\nPASSPORT USE" },
   // { num: "04", label: "CERTIFICATE\nFOR DRIVING\nLICENSE" },
   // { num: "05", label: "CERTIFICATE FOR\nNADRA USE" },
@@ -145,7 +145,7 @@ const allItems = [
 
 const lastRow = [
   { num: "04", label: "RULES &\nORDERS" },
-  { num: "05", label: "IHCBAR RULES" },
+  { num: "05", label: "IHCBA    RULES" },
   // { num: "10", label: "FIR COPY" },
 ];
 
