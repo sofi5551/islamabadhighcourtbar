@@ -1581,8 +1581,8 @@ export default function Home() {
           className="relative w-full overflow-hidden"
           style={{
             borderRadius: "20px",
-            minHeight: "400px",
-            maxHeight: "400px",
+            minHeight: "500px",
+            maxHeight: "500px",
           }}
         >
           <iframe
