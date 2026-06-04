@@ -116,6 +116,13 @@ const bearers = [
     image: "/Current Cabinet/cabinet-library-secretary.jpeg",
     slug: "Shoeba-Akhtar",
   },
+  {
+    name: "Farooq Iqbal Khan",
+    designation: "Advocate",
+    post: "Auditor",
+    image: "/Current Cabinet/farooq-iqbal.jpg",
+    slug: "Farooq-Iqbal-Khan",
+  },
 ];
 
 const GAP = 16;
@@ -207,10 +214,31 @@ function Card({ num, label, smLast, lgLast, hasBottom }) {
   );
 }
 const videos = [
-  { id: 1, title: "Video Title 1", image: "/home6.png" },
-  { id: 2, title: "Video Title 2", image: "/home7.png" },
-  { id: 3, title: "Video Title 3", image: "/home8.png" },
-  { id: 4, title: "Video Title 4", image: "/home9.png" },
+  {
+    id: 1,
+    title: "Press Conference by President IHCBA & IBA on Judges Rotation",
+    youtubeId: "b5-oaxlGoMM",
+  },
+  {
+    id: 2,
+    title: "Press Talk by Secretary Ch Manzoor Ahmed Jajja",
+    youtubeId: "TXrHfHo9tg0",
+  },
+  {
+    id: 3,
+    title: "Opening Ceremony Video",
+    youtubeId: "alpjYjJcVzU",
+  },
+  {
+    id: 4,
+    title: "Highlights of Dinner in Honour of Chief Justice Sarfaraz Dogar",
+    youtubeId: "1-JXndTT4p0",
+  },
+  {
+    id: 5,
+    title: "President Speech on Dinner Chief Justice",
+    youtubeId: "scde1ppeN2U",
+  },
 ];
 const articles = newsData.slice(0, 3);
 export default function Home() {
@@ -1172,7 +1200,9 @@ export default function Home() {
                 style={{
                   gap: `${GAP}px`,
                   transform: `translateX(-${translateX}px)`,
-                  transition: noTransition ? "none" : "transform 500ms ease-in-out",
+                  transition: noTransition
+                    ? "none"
+                    : "transform 500ms ease-in-out",
                 }}
               >
                 {items.map((bearer) => (
@@ -1425,126 +1455,168 @@ export default function Home() {
           </div>
         </FadeIn>
       </section>
+      {/* <section className="w-full">
+        <div
+          className="relative w-full overflow-hidden"
+          style={{
+            borderRadius: "20px",
+            minHeight: "400px",
+            maxHeight: "400px",
+          }}
+        >
+          {playing ? (
+            <>
+              <iframe
+                src={`https://www.youtube.com/embed/${activeVideo.youtubeId}?autoplay=1`}
+                className="absolute inset-0 w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                title={activeVideo.title}
+              />
+              <div className="relative z-10 p-4">
+                <button
+                  onClick={() => setPlaying(false)}
+                  className="flex items-center gap-1.5 dmsans text-white text-sm px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity"
+                  style={{ background: "rgba(0,0,0,0.55)", cursor: "pointer" }}
+                >
+                  ✕ Stop Video
+                </button>
+              </div>
+            </>
+          ) : (
+            <>
+              <Image
+                src={`https://img.youtube.com/vi/${activeVideo.youtubeId}/hqdefault.jpg`}
+                alt={activeVideo.title}
+                fill
+                className="object-cover object-center transition-all duration-500"
+                sizes="100vw"
+                priority
+              />
+
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.25) 100%)",
+                }}
+              />
+
+              <div className="relative z-10 flex flex-col justify-between h-full min-h-[400px] max-h-[400px] p-6 md:p-8">
+
+                <FadeIn delay={0}>
+                  <p
+                    className="dmsans text-white"
+                    style={{
+                      fontSize: "clamp(16px, 2vw, 32px)",
+                      lineHeight: "124%",
+                      letterSpacing: "-0.04em",
+                    }}
+                  >
+                    Latest Videos
+                  </p>
+                </FadeIn>
+                <div className="flex items-center justify-center flex-1 py-8">
+                  <button
+                    onClick={() => setPlaying(true)}
+                    className="transition-transform duration-200 hover:scale-110 active:scale-95"
+                    aria-label="Play"
+                  >
+                    <Image
+                      src="/play-button.png"
+                      alt="Play"
+                      width={72}
+                      height={72}
+                      className="object-contain md:w-20 md:h-20 cursor-pointer"
+                    />
+                  </button>
+                </div>
+                <FadeIn delay={200}>
+                  <div className="flex items-end justify-between gap-4">
+                    <h2
+                      className="basker text-white"
+                      style={{
+                        fontSize: "clamp(13px, 1.5vw, 18px)",
+                        lineHeight: "95%",
+                        letterSpacing: "-0.04em",
+                        maxWidth: "60%",
+                      }}
+                    >
+                      {activeVideo.title}
+                    </h2>
+
+                    <div className="flex items-center gap-2 flex-shrink-0">
+                      {thumbnails.map((video) => (
+                        <button
+                          key={video.id}
+                          onClick={() => handleThumbnailClick(video)}
+                          className="relative overflow-hidden transition-transform duration-200 hover:scale-105 active:scale-95 flex-shrink-0 cursor-pointer"
+                          style={{
+                            width: "clamp(56px, 6vw, 88px)",
+                            height: "clamp(40px, 4.5vw, 64px)",
+                            borderRadius: "6px",
+                            border: "2px solid rgba(255,255,255,0.4)",
+                          }}
+                          aria-label={video.title}
+                        >
+                          <Image
+                            src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`}
+                            alt={video.title}
+                            fill
+                            className="object-cover"
+                            sizes="88px"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </FadeIn>
+              </div>
+            </>
+          )}
+        </div>
+      </section> */}
       <section className="w-full">
         <div
           className="relative w-full overflow-hidden"
-          style={{ borderRadius: "20px", minHeight: "400px" }}
+          style={{
+            borderRadius: "20px",
+            minHeight: "400px",
+            maxHeight: "400px",
+          }}
         >
-          {/* ── Background Image ── */}
-          <Image
-            src={activeVideo.image}
-            alt={activeVideo.title}
-            fill
-            className="object-cover object-center transition-all duration-500"
-            sizes="100vw"
-            priority
+          <iframe
+            src={`https://www.youtube.com/embed/${activeVideo.youtubeId}`}
+            className="absolute inset-0 w-full h-full border-0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            title={activeVideo.title}
           />
-
-          {/* Dark overlay */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.25) 100%)",
-            }}
-          />
-
-          {/* ── Content ── */}
-          <div className="relative z-10 flex flex-col justify-between h-full min-h-[400px] md:min-h-[520px] p-6 md:p-8">
-            {/* Top: Latest Videos label */}
-            <FadeIn delay={0}>
-              <p
-                className="dmsans text-white"
-                style={{
-                  fontSize: "clamp(16px, 2vw, 32px)",
-                  lineHeight: "124%",
-                  letterSpacing: "-0.04em",
-                }}
-              >
-                Latest Videos
-              </p>
-            </FadeIn>
-
-            {/* Center: Play/Pause button */}
-            <div className="flex items-center justify-center flex-1 py-8">
-              <button
-                onClick={() => setPlaying((p) => !p)}
-                className="transition-transform duration-200 hover:scale-110 active:scale-95"
-                aria-label={playing ? "Pause" : "Play"}
-              >
-                {playing ? (
-                  /* Pause button */
-                  <div
-                    className="w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center"
-                    style={{ backgroundColor: "#D9D9D9", cursor: "pointer" }}
-                  >
-                    <div className="flex gap-1.5">
-                      <div
-                        className="w-2 h-7 md:h-8 rounded-sm"
-                        style={{ backgroundColor: "#333" }}
-                      />
-                      <div
-                        className="w-2 h-7 md:h-8 rounded-sm"
-                        style={{ backgroundColor: "#333" }}
-                      />
-                    </div>
-                  </div>
-                ) : (
-                  /* Play button image */
-                  <Image
-                    src="/play-button.png"
-                    alt="Play"
-                    width={72}
-                    height={72}
-                    className="object-contain md:w-20 md:h-20 cursor-pointer"
-                  />
-                )}
-              </button>
-            </div>
-
-            {/* Bottom: Title + Thumbnails */}
-            <FadeIn delay={200}>
-              <div className="flex items-end justify-between gap-4">
-                {/* Video title */}
-                <h2
-                  className="basker text-white"
+          <div className="absolute bottom-3 right-4 z-10">
+            <div className="flex items-center gap-2 flex-shrink-0">
+              {thumbnails.map((video) => (
+                <button
+                  key={video.id}
+                  onClick={() => handleThumbnailClick(video)}
+                  className="relative overflow-hidden transition-transform duration-200 hover:scale-105 active:scale-95 flex-shrink-0 cursor-pointer"
                   style={{
-                    fontSize: "clamp(28px, 5vw, 64px)",
-                    lineHeight: "95%",
-                    letterSpacing: "-0.04em",
-                    maxWidth: "60%",
+                    width: "clamp(56px, 6vw, 88px)",
+                    height: "clamp(40px, 4.5vw, 64px)",
+                    borderRadius: "6px",
+                    border: "2px solid rgba(255,255,255,0.4)",
                   }}
+                  aria-label={video.title}
                 >
-                  {activeVideo.title}
-                </h2>
-
-                {/* Thumbnails */}
-                <div className="flex items-center gap-2 flex-shrink-0">
-                  {thumbnails.map((video) => (
-                    <button
-                      key={video.id}
-                      onClick={() => handleThumbnailClick(video)}
-                      className="relative overflow-hidden transition-transform duration-200 hover:scale-105 active:scale-95 flex-shrink-0 cursor-pointer"
-                      style={{
-                        width: "clamp(56px, 6vw, 88px)",
-                        height: "clamp(40px, 4.5vw, 64px)",
-                        borderRadius: "6px",
-                        border: "2px solid rgba(255,255,255,0.4)",
-                      }}
-                      aria-label={video.title}
-                    >
-                      <Image
-                        src={video.image}
-                        alt={video.title}
-                        fill
-                        className="object-cover"
-                        sizes="88px"
-                      />
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
+                  <Image
+                    src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`}
+                    alt={video.title}
+                    fill
+                    className="object-cover"
+                    sizes="88px"
+                  />
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </section>

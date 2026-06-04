@@ -30,15 +30,20 @@ function FadeIn({ children, delay = 0, className = "" }) {
 const bearer = {
   pageTitle: "Administrative Officer Message",
   bannerImage: "/president-message.png",
-  personImage: "/home2.png",
+  personImage: "/admin-officer.jpg",
   name: "Syed Abdullah Nawaz Gillani",
   role: "ADMIN OFFICER",
   tag: "Service with dedication",
   paragraphs: [
-    "It is a privilege to serve as the Administrative Officer of the Islamabad High Court Bar Association. I am committed to ensuring the smooth and efficient functioning of all administrative operations of the Association.",
-    "My role is to support the elected leadership, the members, and the staff of IHCBA in every possible way. I strive to maintain transparency, accountability, and professionalism in all matters entrusted to me.",
-    "I extend my full cooperation to every member of the Bar and pledge to address your administrative concerns with promptness and diligence. Together, let us work towards a stronger and more organized Association.",
-    "Sincerely,",
+    "Syed Abdullah Nawaz Gillani serves as Admin Officer at the Islamabad High Court Bar Association (IHCBA), bringing to the role a rare combination of financial expertise, cross-sector experience, and a genuine commitment to serving the legal community of Pakistan.",
+    "A graduate in Finance, Abdullah built his professional foundation across some of the most demanding environments in the public and private sectors. His career spans the structured world of banking, the technical precision of private tax consulting, and specialist contract work with the Islamabad Bar Council each chapter adding depth to his administrative capability and sharpening his understanding of institutional operations at the highest level.",
+    "Known among peers and colleagues for his brilliant, analytical mind and sharp attention to detail, Abdullah approaches every responsibility with clarity, confidence, and a proactive spirit. He combines strong technical knowledge with exceptional interpersonal skills, allowing him to manage complex administrative workflows efficiently while maintaining meaningful relationships with members, stakeholders, and the wider legal community.",
+    "At IHCBA, Abdullah serves as a trusted cornerstone of the institution's daily operations. He oversees administrative processes, supports member welfare, ensures operational excellence, and works diligently to uphold the values of professionalism and integrity that define the Association. His multifaceted background equips him to handle the unique demands of a premier legal institution with both competence and care.",
+    "Driven by a sincere desire to serve, Abdullah remains committed to delivering the highest standard of administrative support not as a formality, but as a reflection of his deep respect for the legal profession and the people who dedicate their lives to it.",
+    "It is both an honour and a privilege to serve the Islamabad High Court Bar Association — an institution that stands at the heart of Pakistan's legal landscape. I firmly believe that administration is not merely a support function; it is the backbone upon which great institutions are built and sustained.",
+    "My commitment to every member of this Association, and to every colleague I have the honour of working alongside, is straightforward: to bring professionalism, transparency, and genuine dedication to each task whether large or small. The legal community deserves nothing less than the very best, and I am motivated every single day to deliver exactly that.",
+    "Drawing on my background in finance, banking, taxation, and bar council affairs, I strive to bring creative thinking, clear judgment, and a proactive approach to the challenges we face together. The welfare of our members and the continued growth and prestige of the IHCBA remain my foremost priority.",
+    "I look forward to serving you with the excellence, integrity, and commitment this institution truly deserves.",
   ],
 };
 
@@ -46,7 +51,9 @@ export default function AdministrativeOfficerMessage() {
   return (
     <>
       <Head>
-        <title>Islamabad High Court Bar Association: Administrative Officer Message</title>
+        <title>
+          Islamabad High Court Bar Association: Administrative Officer Message
+        </title>
       </Head>
       {/* ── Hero Banner ── */}
       <section className="w-full">
@@ -154,7 +161,7 @@ export default function AdministrativeOfficerMessage() {
             <div
               className="dmsans flex flex-col gap-3"
               style={{
-                fontSize: "clamp(13px, 1.8vw, 24px)",
+                fontSize: "clamp(10px, 1.2vw, 12px)",
                 lineHeight: "124%",
                 letterSpacing: "-0.04em",
                 color: "#595959",

@@ -38,6 +38,13 @@ const bearers = [
     image: "/Current Cabinet/cabinet-library-secretary.jpeg",
     slug: "Shoeba-Akhtar",
   },
+  {
+    name: "Farooq Iqbal Khan",
+    designation: "Advocate",
+    post: "Auditor",
+    image: "/Current Cabinet/farooq-iqbal.jpg",
+    slug: "Farooq-Iqbal-Khan",
+  },
 ];
 export default function Bearer() {
   return (
