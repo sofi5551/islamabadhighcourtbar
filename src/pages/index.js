@@ -812,6 +812,7 @@ export default function Home() {
                 lineHeight: "124%",
                 letterSpacing: "-0.04em",
                 opacity: 0.85,
+                textAlign: "justify",
               }}
             >
               The Islamabad High Court Bar Association (IHCBA) is a professional
@@ -829,6 +830,7 @@ export default function Home() {
                 lineHeight: "124%",
                 letterSpacing: "-0.04em",
                 opacity: 0.85,
+                textAlign: "justify",
               }}
             >
               With a growing community of legal professionals, IHCBA plays an
@@ -902,6 +904,7 @@ export default function Home() {
                     lineHeight: "124%",
                     letterSpacing: "-0.04em",
                     color: "#595959",
+                    textAlign: "justify",
                   }}
                 >
                   The Islamabad High Court Bar Association plays a vital role in
@@ -925,6 +928,7 @@ export default function Home() {
                     lineHeight: "124%",
                     letterSpacing: "-0.04em",
                     color: "#595959",
+                    textAlign: "justify",
                   }}
                 >
                   With a growing community of legal professionals, IHCBA plays
@@ -968,6 +972,7 @@ export default function Home() {
               color: "#595959",
               maxWidth: "900px",
               paddingTop: "8px",
+              textAlign: "justify",
             }}
           >
             Our mission is to uphold the rule of law, protect the independence
@@ -1014,6 +1019,7 @@ export default function Home() {
                 lineHeight: "124%",
                 letterSpacing: "-0.04em",
                 color: "#000000",
+                textAlign: "justify",
               }}
             >
               Our mission is to uphold the rule of law, protect the independence

@@ -10,7 +10,7 @@ export default function Layout({ children }) {
   const navLinks = [
     {
       label: "About",
-      href: "#",
+      href: "/about-us",
       dropdown: [
         { label: "President Message", href: "/president-message" },
         { label: "Secretary Message", href: "/secretary-message" },
