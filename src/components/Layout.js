@@ -166,6 +166,11 @@ export default function Layout({ children }) {
           href: "/download forms/Application_for_cases_list_.pdf",
           download: true,
         },
+        {
+          label: "Application form for Oath Commissioner",
+          href: "/download forms/form-oath-comissioner.pdf",
+          download: true,
+        },
       ],
     },
     // { label: "Search Lawyers", href: "/search-lawyers" },
