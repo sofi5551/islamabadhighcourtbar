@@ -174,6 +174,7 @@ export default function Layout({ children }) {
       ],
     },
     // { label: "Search Lawyers", href: "/search-lawyers" },
+    { label: "Draft MOA", href: "/draft-moa" },
     { label: "News & Updates", href: "/news-updates" },
     { label: "Contact", href: "/contact-us" },
   ];
